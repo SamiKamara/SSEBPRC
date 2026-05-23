@@ -29,6 +29,7 @@ export function calculateBlueprintResources(
   const warnings: CalculationWarning[] = [...blueprint.warnings];
   const blockCounts = countBlocks(blueprint.blocks);
   const componentCounts = new Map<string, number>();
+  const componentLabels = new Map<string, string>();
   const ingotCounts = new Map<string, number>();
 
   for (const blockRow of blockCounts.values()) {
@@ -44,7 +45,13 @@ export function calculateBlueprintResources(
       continue;
     }
 
+    blockRow.label = definition.displayName || blockRow.label;
+
     for (const component of summarizeComponents(definition.components)) {
+      if (component.displayName) {
+        componentLabels.set(makeComponentKey(component.subtypeId), component.displayName);
+      }
+
       addToMap(
         componentCounts,
         makeComponentKey(component.subtypeId),
@@ -66,6 +73,10 @@ export function calculateBlueprintResources(
       continue;
     }
 
+    if (recipe.displayName) {
+      componentLabels.set(componentKey, recipe.displayName);
+    }
+
     for (const ingot of recipe.ingots) {
       addToMap(ingotCounts, normalizeSubtypeId(ingot.subtypeId), componentCount * ingot.amount);
     }
@@ -79,7 +90,7 @@ export function calculateBlueprintResources(
       blockCount: blueprint.blockCount,
     },
     blocks: sortRows([...blockCounts.values()]),
-    components: sortRows(mapToRows(componentCounts)),
+    components: sortRows(mapToRows(componentCounts, componentLabels)),
     ingots: sortRows(mapToRows(ingotCounts)),
     warnings,
     definitionVersion: definitions.manifest.definitionVersion,
@@ -147,19 +158,29 @@ function findComponentRecipe(key: string, lookup: ComponentRecipeLookup) {
 }
 
 function summarizeComponents(components: BlockDefinition["components"]) {
-  const totals = new Map<string, number>();
+  const totals = new Map<string, { count: number; displayName?: string }>();
 
   for (const component of components) {
-    addToMap(totals, makeComponentKey(component.subtypeId), component.count);
+    const key = makeComponentKey(component.subtypeId);
+    const existing = totals.get(key);
+
+    totals.set(key, {
+      count: (existing?.count ?? 0) + component.count,
+      displayName: existing?.displayName ?? component.displayName,
+    });
   }
 
-  return [...totals.entries()].map(([subtypeId, count]) => ({ subtypeId, count }));
+  return [...totals.entries()].map(([subtypeId, component]) => ({
+    subtypeId,
+    count: component.count,
+    displayName: component.displayName,
+  }));
 }
 
-function mapToRows(counts: Map<string, number>) {
+function mapToRows(counts: Map<string, number>, labelLookup?: Map<string, string>) {
   return [...counts.entries()].map(([key, count]) => ({
     key,
-    label: key,
+    label: labelLookup?.get(key) ?? key,
     count: roundResourceAmount(count),
   }));
 }

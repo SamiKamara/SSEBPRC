@@ -30,12 +30,6 @@ export function FileDropzone({
   const handleDrop = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setIsDragOver(false);
-
-    const file = event.dataTransfer.files.item(0);
-
-    if (file && !isBusy) {
-      onFileSelected(file);
-    }
   };
 
   const handleFileInput = (event: ChangeEvent<HTMLInputElement>) => {
@@ -80,7 +74,9 @@ export function FileDropzone({
             <h2 className="text-lg font-semibold text-slate-50">
               {visibleFileName || "Upload blueprint"}
             </h2>
-            <p className="mt-1 text-sm text-slate-400">bp.sbc or zipped blueprint folder</p>
+            <p className="mt-1 text-sm text-slate-400">
+              Drop a bp.sbc or zipped blueprint folder anywhere in this window
+            </p>
           </div>
         </div>
 

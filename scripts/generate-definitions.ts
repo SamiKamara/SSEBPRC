@@ -27,9 +27,11 @@ async function main() {
   const blueprintFiles = (await walkSbcFiles(dataRoot)).filter((filePath) =>
     path.basename(filePath).toLowerCase().startsWith("blueprints"),
   );
+  const localization = await loadLocalization(dataRoot);
+  const componentDisplayNames = await loadComponentDisplayNames(dataRoot, localization);
 
-  const blockDefinitions = await generateBlockDefinitions(cubeBlockFiles);
-  const componentRecipes = await generateComponentRecipes(blueprintFiles);
+  const blockDefinitions = await generateBlockDefinitions(cubeBlockFiles, localization, componentDisplayNames);
+  const componentRecipes = await generateComponentRecipes(blueprintFiles, componentDisplayNames);
   const manifest: DefinitionManifest = {
     game: "Space Engineers",
     generatedAt: new Date().toISOString(),
@@ -86,7 +88,11 @@ async function resolveDataRoot() {
   );
 }
 
-async function generateBlockDefinitions(filePaths: string[]) {
+async function generateBlockDefinitions(
+  filePaths: string[],
+  localization: Map<string, string>,
+  componentDisplayNames: Map<string, string>,
+) {
   const definitions = new Map<string, BlockDefinition>();
 
   for (const filePath of filePaths) {
@@ -103,17 +109,21 @@ async function generateBlockDefinitions(filePaths: string[]) {
         continue;
       }
 
-      const components = summarizeComponentDefinitions(collectElementsByLocalName(definition, "Component"));
+      const components = summarizeComponentDefinitions(
+        collectElementsByLocalName(definition, "Component"),
+        componentDisplayNames,
+      );
 
       if (components.length === 0) {
         continue;
       }
 
+      const rawDisplayName = readNestedText(definition, "DisplayName");
       const key = `${typeId}/${subtypeId}`;
       definitions.set(key, {
         typeId,
         subtypeId,
-        displayName: readNestedText(definition, "DisplayName") || undefined,
+        displayName: resolveDisplayName(rawDisplayName, localization) || humanizeIdentifier(subtypeId || typeId),
         components,
       });
     }
@@ -124,7 +134,7 @@ async function generateBlockDefinitions(filePaths: string[]) {
   );
 }
 
-async function generateComponentRecipes(filePaths: string[]) {
+async function generateComponentRecipes(filePaths: string[], componentDisplayNames: Map<string, string>) {
   const recipes = new Map<string, RecipeCandidate>();
 
   for (const filePath of filePaths) {
@@ -158,6 +168,7 @@ async function generateComponentRecipes(filePaths: string[]) {
           isPrimary,
           recipe: {
             subtypeId: componentResult.subtypeId,
+            displayName: componentDisplayNames.get(componentResult.subtypeId) ?? humanizeIdentifier(componentResult.subtypeId),
             source: "vanilla",
             ingots,
           },
@@ -169,6 +180,45 @@ async function generateComponentRecipes(filePaths: string[]) {
   return [...recipes.values()]
     .map((candidate) => candidate.recipe)
     .sort((left, right) => left.subtypeId.localeCompare(right.subtypeId));
+}
+
+async function loadLocalization(dataRoot: string) {
+  const localizationPath = path.join(dataRoot, "Localization", "MyTexts.resx");
+  const parsed = parser.parse(await readFile(localizationPath, "utf-8"));
+  const entries = new Map<string, string>();
+
+  for (const entry of collectElementsByLocalName(parsed, "data").filter(isRecord)) {
+    const name = readAttribute(entry, "name");
+    const value = readNestedText(entry, "value");
+
+    if (name && value) {
+      entries.set(name, value);
+    }
+  }
+
+  return entries;
+}
+
+async function loadComponentDisplayNames(dataRoot: string, localization: Map<string, string>) {
+  const parsed = parser.parse(await readFile(path.join(dataRoot, "Components.sbc"), "utf-8"));
+  const displayNames = new Map<string, string>();
+
+  for (const definition of collectElementsByLocalName(parsed, "Definition").filter(isRecord)) {
+    const id = findDirectChild(definition, "Id");
+    const typeId = normalizeTypeId(readNestedText(id, "TypeId") || readNestedText(definition, "TypeId"));
+    const subtypeId = normalizeSubtypeId(
+      readNestedText(id, "SubtypeId") || readNestedText(definition, "SubtypeId"),
+    );
+
+    if (typeId !== "Component" || !subtypeId) {
+      continue;
+    }
+
+    const rawDisplayName = readNestedText(definition, "DisplayName");
+    displayNames.set(subtypeId, resolveDisplayName(rawDisplayName, localization) || humanizeIdentifier(subtypeId));
+  }
+
+  return displayNames;
 }
 
 function readRecipeItems(node: XmlRecord, wrapperName: string, singularName: string) {
@@ -188,7 +238,7 @@ function readRecipeItems(node: XmlRecord, wrapperName: string, singularName: str
   }));
 }
 
-function summarizeComponentDefinitions(components: unknown[]) {
+function summarizeComponentDefinitions(components: unknown[], componentDisplayNames: Map<string, string>) {
   const totals = new Map<string, number>();
 
   for (const component of components.filter(isRecord)) {
@@ -207,7 +257,11 @@ function summarizeComponentDefinitions(components: unknown[]) {
   }
 
   return [...totals.entries()]
-    .map(([subtypeId, count]) => ({ subtypeId, count }))
+    .map(([subtypeId, count]) => ({
+      subtypeId,
+      displayName: componentDisplayNames.get(subtypeId) ?? humanizeIdentifier(subtypeId),
+      count,
+    }))
     .sort((left, right) => left.subtypeId.localeCompare(right.subtypeId));
 }
 
@@ -296,6 +350,20 @@ function readNumber(value: string) {
 
 function readBoolean(value: string) {
   return value.toLowerCase() === "true" || value === "1";
+}
+
+function resolveDisplayName(displayNameKey: string, localization: Map<string, string>) {
+  return localization.get(displayNameKey) ?? "";
+}
+
+function humanizeIdentifier(value: string) {
+  return value
+    .replace(/^LargeBlock/, "Large ")
+    .replace(/^SmallBlock/, "Small ")
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .replace(/_/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function visitXml(node: unknown, visitor: (key: string, value: unknown) => void) {

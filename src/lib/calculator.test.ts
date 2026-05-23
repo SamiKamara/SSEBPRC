@@ -55,6 +55,7 @@ const definitions: DefinitionData = {
     {
       typeId: "MyObjectBuilder_CubeBlock",
       subtypeId: "LargeBlockArmorBlock",
+      displayName: "Light Armor Block",
       components: [
         { subtypeId: "SteelPlate", count: 2 },
         { subtypeId: "SteelPlate", count: 3 },
@@ -64,6 +65,7 @@ const definitions: DefinitionData = {
   componentRecipes: [
     {
       subtypeId: "SteelPlate",
+      displayName: "Steel Plate",
       source: "vanilla",
       ingots: [{ subtypeId: "Iron", amount: 21 }],
     },
@@ -74,7 +76,9 @@ test("calculator sums repeated components and returns partial results for unknow
   const result = calculateBlueprintResources(baseBlueprint, definitions);
 
   assert.equal(result.blocks.find((row) => row.key === "CubeBlock/LargeBlockArmorBlock")?.count, 2);
+  assert.equal(result.blocks.find((row) => row.key === "CubeBlock/LargeBlockArmorBlock")?.label, "Light Armor Block");
   assert.equal(result.components.find((row) => row.key === "SteelPlate")?.count, 10);
+  assert.equal(result.components.find((row) => row.key === "SteelPlate")?.label, "Steel Plate");
   assert.equal(result.ingots.find((row) => row.key === "Iron")?.count, 210);
   assert.equal(result.warnings.some((warning) => warning.kind === "missing-block-definition"), true);
 });

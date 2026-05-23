@@ -39,12 +39,14 @@ export type BlockDefinition = {
 
 export type ComponentRecipe = {
   subtypeId: string;
+  displayName?: string;
   ingots: IngotAmount[];
   source: "vanilla" | "custom";
 };
 
 export type ComponentAmount = {
   subtypeId: string;
+  displayName?: string;
   count: number;
 };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { DragEvent, useMemo, useRef, useState } from "react";
 import {
   AlertTriangle,
   FileJson,
@@ -27,6 +27,8 @@ export function BlueprintResourceCalculator() {
   const [error, setError] = useState("");
   const [result, setResult] = useState<CalculateResponse | null>(null);
   const [activeTab, setActiveTab] = useState<ResultTab>("ingots");
+  const [isPageDragActive, setIsPageDragActive] = useState(false);
+  const dragDepthRef = useRef(0);
 
   const tabs = useMemo(
     () => [
@@ -43,6 +45,55 @@ export function BlueprintResourceCalculator() {
   );
 
   const isBusy = uploadState === "validating" || uploadState === "uploading";
+
+  const handlePageDragEnter = (event: DragEvent<HTMLElement>) => {
+    if (!isFileDrag(event)) {
+      return;
+    }
+
+    event.preventDefault();
+    dragDepthRef.current += 1;
+    setIsPageDragActive(true);
+  };
+
+  const handlePageDragOver = (event: DragEvent<HTMLElement>) => {
+    if (!isFileDrag(event)) {
+      return;
+    }
+
+    event.preventDefault();
+    event.dataTransfer.dropEffect = isBusy ? "none" : "copy";
+    setIsPageDragActive(true);
+  };
+
+  const handlePageDragLeave = (event: DragEvent<HTMLElement>) => {
+    if (!isFileDrag(event)) {
+      return;
+    }
+
+    event.preventDefault();
+    dragDepthRef.current = Math.max(0, dragDepthRef.current - 1);
+
+    if (dragDepthRef.current === 0) {
+      setIsPageDragActive(false);
+    }
+  };
+
+  const handlePageDrop = (event: DragEvent<HTMLElement>) => {
+    if (!isFileDrag(event)) {
+      return;
+    }
+
+    event.preventDefault();
+    dragDepthRef.current = 0;
+    setIsPageDragActive(false);
+
+    const file = event.dataTransfer.files.item(0);
+
+    if (file && !isBusy) {
+      void handleFileSelected(file);
+    }
+  };
 
   const handleFileSelected = async (file: File) => {
     setUploadState("validating");
@@ -104,7 +155,21 @@ export function BlueprintResourceCalculator() {
   };
 
   return (
-    <main className="min-h-screen px-4 py-5 text-slate-50 sm:px-6 lg:px-8">
+    <main
+      onDragEnter={handlePageDragEnter}
+      onDragOver={handlePageDragOver}
+      onDragLeave={handlePageDragLeave}
+      onDrop={handlePageDrop}
+      className="relative min-h-screen px-4 py-5 text-slate-50 sm:px-6 lg:px-8"
+    >
+      {isPageDragActive ? (
+        <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center border-4 border-cyan-300 bg-cyan-950/70 text-center backdrop-blur-sm">
+          <div className="rounded-md border border-cyan-300 bg-slate-950 px-6 py-5 shadow-panel">
+            <p className="text-xl font-semibold text-slate-50">Drop blueprint to calculate</p>
+            <p className="mt-1 text-sm text-slate-300">bp.sbc or zipped blueprint folder</p>
+          </div>
+        </div>
+      ) : null}
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-5">
         <header className="border-b border-slate-800 pb-4">
           <div className="flex flex-col gap-3">
@@ -219,6 +284,10 @@ export function BlueprintResourceCalculator() {
       </div>
     </main>
   );
+}
+
+function isFileDrag(event: DragEvent<HTMLElement>) {
+  return Array.from(event.dataTransfer.types).includes("Files");
 }
 
 function getUploadErrorMessage(uploadError: unknown) {

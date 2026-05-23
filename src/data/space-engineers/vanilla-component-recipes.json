@@ -1,6 +1,7 @@
 [
   {
     "subtypeId": "BulletproofGlass",
+    "displayName": "Bulletproof Glass",
     "source": "vanilla",
     "ingots": [
       {
@@ -11,6 +12,7 @@
   },
   {
     "subtypeId": "Canvas",
+    "displayName": "Canvas",
     "source": "vanilla",
     "ingots": [
       {
@@ -25,6 +27,7 @@
   },
   {
     "subtypeId": "Computer",
+    "displayName": "Computer",
     "source": "vanilla",
     "ingots": [
       {
@@ -39,6 +42,7 @@
   },
   {
     "subtypeId": "Construction",
+    "displayName": "Construction",
     "source": "vanilla",
     "ingots": [
       {
@@ -49,6 +53,7 @@
   },
   {
     "subtypeId": "Detector",
+    "displayName": "Detector",
     "source": "vanilla",
     "ingots": [
       {
@@ -63,6 +68,7 @@
   },
   {
     "subtypeId": "Display",
+    "displayName": "Display",
     "source": "vanilla",
     "ingots": [
       {
@@ -77,6 +83,7 @@
   },
   {
     "subtypeId": "Explosives",
+    "displayName": "Explosives",
     "source": "vanilla",
     "ingots": [
       {
@@ -91,6 +98,7 @@
   },
   {
     "subtypeId": "Girder",
+    "displayName": "Girder",
     "source": "vanilla",
     "ingots": [
       {
@@ -101,6 +109,7 @@
   },
   {
     "subtypeId": "GravityGenerator",
+    "displayName": "Gravity Generator",
     "source": "vanilla",
     "ingots": [
       {
@@ -123,6 +132,7 @@
   },
   {
     "subtypeId": "InteriorPlate",
+    "displayName": "Interior Plate",
     "source": "vanilla",
     "ingots": [
       {
@@ -133,6 +143,7 @@
   },
   {
     "subtypeId": "LargeTube",
+    "displayName": "Large Tube",
     "source": "vanilla",
     "ingots": [
       {
@@ -143,6 +154,7 @@
   },
   {
     "subtypeId": "Medical",
+    "displayName": "Medical",
     "source": "vanilla",
     "ingots": [
       {
@@ -161,6 +173,7 @@
   },
   {
     "subtypeId": "MetalGrid",
+    "displayName": "Metal Grid",
     "source": "vanilla",
     "ingots": [
       {
@@ -179,6 +192,7 @@
   },
   {
     "subtypeId": "Motor",
+    "displayName": "Motor",
     "source": "vanilla",
     "ingots": [
       {
@@ -193,6 +207,7 @@
   },
   {
     "subtypeId": "PowerCell",
+    "displayName": "Power Cell",
     "source": "vanilla",
     "ingots": [
       {
@@ -211,6 +226,7 @@
   },
   {
     "subtypeId": "PrototechCapacitor",
+    "displayName": "Prototech Capacitor",
     "source": "vanilla",
     "ingots": [
       {
@@ -237,6 +253,7 @@
   },
   {
     "subtypeId": "PrototechCircuitry",
+    "displayName": "Prototech Circuitry",
     "source": "vanilla",
     "ingots": [
       {
@@ -263,6 +280,7 @@
   },
   {
     "subtypeId": "PrototechCoolingUnit",
+    "displayName": "Prototech Cooling Unit",
     "source": "vanilla",
     "ingots": [
       {
@@ -285,6 +303,7 @@
   },
   {
     "subtypeId": "PrototechMachinery",
+    "displayName": "Prototech Machinery",
     "source": "vanilla",
     "ingots": [
       {
@@ -311,6 +330,7 @@
   },
   {
     "subtypeId": "PrototechPanel",
+    "displayName": "Prototech Panel",
     "source": "vanilla",
     "ingots": [
       {
@@ -333,6 +353,7 @@
   },
   {
     "subtypeId": "PrototechPropulsionUnit",
+    "displayName": "Prototech Propulsion Unit",
     "source": "vanilla",
     "ingots": [
       {
@@ -359,6 +380,7 @@
   },
   {
     "subtypeId": "RadioCommunication",
+    "displayName": "Radio Communication",
     "source": "vanilla",
     "ingots": [
       {
@@ -373,6 +395,7 @@
   },
   {
     "subtypeId": "Reactor",
+    "displayName": "Reactor",
     "source": "vanilla",
     "ingots": [
       {
@@ -391,6 +414,7 @@
   },
   {
     "subtypeId": "SmallTube",
+    "displayName": "Small Tube",
     "source": "vanilla",
     "ingots": [
       {
@@ -401,6 +425,7 @@
   },
   {
     "subtypeId": "SolarCell",
+    "displayName": "Solar Cell",
     "source": "vanilla",
     "ingots": [
       {
@@ -415,6 +440,7 @@
   },
   {
     "subtypeId": "SteelPlate",
+    "displayName": "Steel Plate",
     "source": "vanilla",
     "ingots": [
       {
@@ -425,6 +451,7 @@
   },
   {
     "subtypeId": "Superconductor",
+    "displayName": "Superconductor",
     "source": "vanilla",
     "ingots": [
       {
@@ -439,6 +466,7 @@
   },
   {
     "subtypeId": "Thrust",
+    "displayName": "Thrust",
     "source": "vanilla",
     "ingots": [
       {
