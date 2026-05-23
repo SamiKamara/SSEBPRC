@@ -7,17 +7,20 @@ import { acceptedBlueprintExtensions } from "@/lib/file-validation";
 type FileDropzoneProps = {
   isBusy: boolean;
   selectedFileName?: string;
+  displayName?: string;
   onFileSelected: (file: File) => void;
 };
 
 export function FileDropzone({
   isBusy,
   selectedFileName,
+  displayName,
   onFileSelected,
 }: Readonly<FileDropzoneProps>) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [isDragOver, setIsDragOver] = useState(false);
   const visibleFileName = selectedFileName?.trim();
+  const visibleTitle = displayName?.trim() || visibleFileName;
 
   const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -72,7 +75,7 @@ export function FileDropzone({
           </div>
           <div className="min-w-0">
             <h2 className="text-lg font-semibold text-slate-50">
-              {visibleFileName || "Upload blueprint"}
+              {visibleTitle || "Upload blueprint"}
             </h2>
             <p className="mt-1 text-sm text-slate-400">
               Drop a bp.sbc or zipped blueprint folder anywhere in this window

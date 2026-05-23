@@ -17,6 +17,7 @@ export type ParsedBlueprint = {
   fileName: string;
   sourceType: "sbc" | "zip";
   displayName?: string;
+  gridName?: string;
   gridCount: number;
   blockCount: number;
   blocks: BlueprintBlockRef[];
@@ -74,6 +75,7 @@ export type CalculateResponse = {
   blueprint: {
     fileName: string;
     displayName?: string;
+    gridName?: string;
     gridCount: number;
     blockCount: number;
   };

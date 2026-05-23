@@ -7,6 +7,7 @@ const baseBlueprint: ParsedBlueprint = {
   fileName: "bp.sbc",
   sourceType: "sbc",
   displayName: "Fixture",
+  gridName: "Main Grid",
   gridCount: 1,
   blockCount: 3,
   warnings: [],
@@ -75,6 +76,7 @@ const definitions: DefinitionData = {
 test("calculator sums repeated components and returns partial results for unknown blocks", () => {
   const result = calculateBlueprintResources(baseBlueprint, definitions);
 
+  assert.equal(result.blueprint.gridName, "Main Grid");
   assert.equal(result.blocks.find((row) => row.key === "CubeBlock/LargeBlockArmorBlock")?.count, 2);
   assert.equal(result.blocks.find((row) => row.key === "CubeBlock/LargeBlockArmorBlock")?.label, "Light Armor Block");
   assert.equal(result.components.find((row) => row.key === "SteelPlate")?.count, 10);

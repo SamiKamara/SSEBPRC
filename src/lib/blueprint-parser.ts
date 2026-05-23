@@ -6,7 +6,12 @@ import {
   normalizeSubtypeId,
   normalizeTypeId,
 } from "@/lib/normalization";
-import type { BlueprintBlockRef, CalculationWarning, ParsedBlueprint, UploadedBlueprint } from "@/lib/types";
+import type {
+  BlueprintBlockRef,
+  CalculationWarning,
+  ParsedBlueprint,
+  UploadedBlueprint,
+} from "@/lib/types";
 
 type XmlRecord = Record<string, unknown>;
 
@@ -42,8 +47,11 @@ export function parseBlueprint(uploadedBlueprint: UploadedBlueprint): ParsedBlue
   const blocks: BlueprintBlockRef[] = [];
   let gridsWithCubeBlocks = 0;
   let blocksMissingSubtype = 0;
+  let firstGridName = "";
 
   grids.forEach((grid, gridIndex) => {
+    firstGridName ||= readOptionalText(findDirectChild(grid, "DisplayName"));
+
     const cubeBlocks = findFirstElementByLocalName(grid, "CubeBlocks");
 
     if (!cubeBlocks || !isRecord(cubeBlocks)) {
@@ -80,6 +88,7 @@ export function parseBlueprint(uploadedBlueprint: UploadedBlueprint): ParsedBlue
     fileName: uploadedBlueprint.fileName,
     sourceType: uploadedBlueprint.sourceType,
     displayName: readOptionalText(findFirstElementByLocalName(parsed, "DisplayName")),
+    gridName: firstGridName || undefined,
     gridCount: grids.length,
     blockCount: blocks.length,
     blocks,

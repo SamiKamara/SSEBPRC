@@ -13,6 +13,7 @@ test("parser reads multiple grids, normalized type IDs, empty subtypes, and inve
             <DisplayName>Test Rig</DisplayName>
             <CubeGrids>
               <CubeGrid>
+                <DisplayName>Main Grid</DisplayName>
                 <CubeBlocks>
                   <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
                     <SubtypeName>LargeBlockArmorBlock</SubtypeName>
@@ -38,6 +39,7 @@ test("parser reads multiple grids, normalized type IDs, empty subtypes, and inve
   });
 
   assert.equal(parsed.displayName, "Test Rig");
+  assert.equal(parsed.gridName, "Main Grid");
   assert.equal(parsed.gridCount, 2);
   assert.equal(parsed.blockCount, 3);
   assert.equal(parsed.blocks[0].typeId, "CubeBlock");

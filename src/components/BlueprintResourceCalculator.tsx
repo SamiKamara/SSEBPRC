@@ -198,6 +198,7 @@ export function BlueprintResourceCalculator() {
         <FileDropzone
           isBusy={isBusy}
           selectedFileName={selectedFileName}
+          displayName={result?.blueprint.gridName ?? result?.blueprint.displayName}
           onFileSelected={(file) => void handleFileSelected(file)}
         />
 

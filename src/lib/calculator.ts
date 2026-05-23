@@ -86,6 +86,7 @@ export function calculateBlueprintResources(
     blueprint: {
       fileName: blueprint.fileName,
       displayName: blueprint.displayName || undefined,
+      gridName: blueprint.gridName || undefined,
       gridCount: blueprint.gridCount,
       blockCount: blueprint.blockCount,
     },
