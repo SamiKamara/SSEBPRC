@@ -19,7 +19,7 @@ type UploadState = "idle" | "validating" | "uploading" | "success" | "error";
 type ResultTab = "ingots" | "components" | "blocks" | "warnings";
 
 const requestTimeoutMs = 45000;
-const appTitle = "Shagatan’s Space Engineers Blueprint Resource Calculator";
+const appTitle = "Shagatan's Space Engineers Blueprint Resource Calculator";
 
 export function BlueprintResourceCalculator() {
   const [uploadState, setUploadState] = useState<UploadState>("idle");
@@ -179,7 +179,7 @@ export function BlueprintResourceCalculator() {
                 className="flex flex-col gap-1 font-semibold tracking-normal"
               >
                 <span className="text-3xl leading-tight text-slate-50 sm:text-4xl">
-                  Shagatan’s Space Engineers
+                  {"Shagatan's Space Engineers"}
                 </span>
                 <span className="text-xl leading-snug text-blue-300 sm:text-2xl">
                   Blueprint Resource Calculator
