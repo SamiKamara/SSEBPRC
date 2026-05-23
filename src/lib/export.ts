@@ -1,15 +1,11 @@
 import type { CalculateResponse, CountRow } from "@/lib/types";
 
 export function rowsToCsv(rows: CountRow[]) {
-  return ["Name,Key,Count", ...rows.map((row) => [row.label, row.key, row.count].map(csvCell).join(","))].join("\n");
+  return ["Name,Count", ...rows.map((row) => [row.label, row.count].map(csvCell).join(","))].join("\n");
 }
 
 export function rowsToTsv(rows: CountRow[]) {
-  return ["Name\tKey\tCount", ...rows.map((row) => `${row.label}\t${row.key}\t${row.count}`)].join("\n");
-}
-
-export function calculationToJson(calculation: CalculateResponse) {
-  return JSON.stringify(calculation, null, 2);
+  return ["Name\tCount", ...rows.map((row) => `${row.label}\t${row.count}`)].join("\n");
 }
 
 export function fullCalculationToCsv(calculation: CalculateResponse) {
@@ -22,8 +18,8 @@ export function fullCalculationToCsv(calculation: CalculateResponse) {
   return sections
     .flatMap(([sectionName, rows]) => [
       sectionName,
-      "Name,Key,Count",
-      ...rows.map((row) => [row.label, row.key, row.count].map(csvCell).join(",")),
+      "Name,Count",
+      ...rows.map((row) => [row.label, row.count].map(csvCell).join(",")),
       "",
     ])
     .join("\n");

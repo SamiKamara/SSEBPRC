@@ -6,7 +6,7 @@ const siteUrl = "https://ssebprc.vercel.app";
 const appName = "SSEBPRC";
 const title = "SSEBPRC - Space Engineers Blueprint Resource Calculator";
 const description =
-  "Calculate Space Engineers blueprint block, component, and ingot requirements from bp.sbc files or zipped blueprints. Export results as CSV, JSON, or TSV.";
+  "Calculate Space Engineers blueprint block, component, and ingot requirements from bp.sbc files or zipped blueprints. Copy clean name and count lists for planning.";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -3,7 +3,6 @@
 import { DragEvent, useMemo, useRef, useState } from "react";
 import {
   AlertTriangle,
-  FileJson,
   Loader2,
   RotateCcw,
 } from "lucide-react";
@@ -11,7 +10,6 @@ import { FileDropzone } from "@/components/FileDropzone";
 import { ResourceTable } from "@/components/ResourceTable";
 import { ResultsSummary } from "@/components/ResultsSummary";
 import { WarningPanel } from "@/components/WarningPanel";
-import { calculationToJson } from "@/lib/export";
 import { validateBlueprintFile } from "@/lib/file-validation";
 import type { CalculateErrorResponse, CalculateResponse } from "@/lib/types";
 
@@ -162,14 +160,6 @@ export function BlueprintResourceCalculator() {
     setActiveTab("ingots");
   };
 
-  const downloadJson = () => {
-    if (!result) {
-      return;
-    }
-
-    downloadText(`${resultFileBase(result)}.json`, calculationToJson(result), "application/json");
-  };
-
   return (
     <main
       onDragEnter={handlePageDragEnter}
@@ -232,14 +222,6 @@ export function BlueprintResourceCalculator() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <ResultsSummary result={result} />
               <div className="flex shrink-0 flex-wrap gap-2">
-                <button
-                  type="button"
-                  onClick={downloadJson}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-950 px-4 py-2.5 font-medium text-slate-100 transition hover:border-cyan-400 hover:text-cyan-100 focus:outline-none focus:ring-4 focus:ring-cyan-400/20"
-                >
-                  <FileJson aria-hidden="true" className="size-5" />
-                  <span>JSON</span>
-                </button>
                 <button
                   type="button"
                   onClick={reset}
@@ -312,21 +294,4 @@ function getUploadErrorMessage(uploadError: unknown) {
   }
 
   return uploadError instanceof Error ? uploadError.message : "Calculation failed.";
-}
-
-function downloadText(fileName: string, text: string, type: string) {
-  const url = URL.createObjectURL(new Blob([text], { type }));
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = fileName;
-  link.click();
-  URL.revokeObjectURL(url);
-}
-
-function resultFileBase(result: CalculateResponse) {
-  return slugify(result.blueprint.displayName || result.blueprint.fileName || "blueprint-resources");
-}
-
-function slugify(value: string) {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "blueprint-resources";
 }

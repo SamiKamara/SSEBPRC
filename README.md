@@ -14,7 +14,7 @@ Repository: https://github.com/SamiKamara/SSEBPRC
 - Resolve block component requirements from bundled vanilla Space Engineers definition data.
 - Resolve component ingot recipes.
 - Show unresolved blocks or components as warnings instead of failing the whole calculation.
-- Export result tables as CSV, JSON, or TSV.
+- Copy result tables as two-column lists with `Name` and `Count`.
 
 The app does not require an account. Uploaded files are parsed for the current calculation request and are not written to project storage.
 
