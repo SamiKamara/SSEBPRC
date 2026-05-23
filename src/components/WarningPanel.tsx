@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertTriangle, CheckCircle2, Info } from "lucide-react";
+import { AlertTriangle, Info } from "lucide-react";
 import type { CalculationWarning } from "@/lib/types";
 
 type WarningPanelProps = {
@@ -9,12 +9,7 @@ type WarningPanelProps = {
 
 export function WarningPanel({ warnings }: Readonly<WarningPanelProps>) {
   if (warnings.length === 0) {
-    return (
-      <div className="flex min-h-56 items-center justify-center rounded-md border border-dashed border-slate-700 bg-slate-950 px-4 text-center text-slate-300">
-        <CheckCircle2 aria-hidden="true" className="mr-2 size-5 text-emerald-300" />
-        No warnings.
-      </div>
-    );
+    return null;
   }
 
   return (

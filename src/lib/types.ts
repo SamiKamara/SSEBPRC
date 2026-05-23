@@ -94,7 +94,6 @@ export type CalculationWarning = {
   kind:
     | "missing-block-definition"
     | "missing-component-recipe"
-    | "ignored-inventory"
     | "schema-drift-detected"
     | "unsupported-file";
   severity: "info" | "warning" | "error";

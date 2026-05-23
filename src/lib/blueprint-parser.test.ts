@@ -44,7 +44,8 @@ test("parser reads multiple grids, normalized type IDs, empty subtypes, and inve
   assert.equal(parsed.blocks[1].typeId, "Reactor");
   assert.equal(parsed.blocks[1].subtypeId, "");
   assert.equal(parsed.blocks[2].displayKey, "Thrust/LargeBlockSmallThrust");
-  assert.equal(parsed.warnings.some((warning) => warning.kind === "ignored-inventory"), true);
+  assert.equal(parsed.observations.inventoryItemNodeCount, 1);
+  assert.equal(parsed.warnings.length, 0);
 });
 
 test("parser rejects malformed blueprint XML", () => {

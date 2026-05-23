@@ -17,6 +17,11 @@ import type { CalculateErrorResponse, CalculateResponse } from "@/lib/types";
 
 type UploadState = "idle" | "validating" | "uploading" | "success" | "error";
 type ResultTab = "ingots" | "components" | "blocks" | "warnings";
+type ResultTabDefinition = {
+  id: ResultTab;
+  label: string;
+  count: number;
+};
 
 const requestTimeoutMs = 45000;
 const appTitle = "Shagatan's Space Engineers Blueprint Resource Calculator";
@@ -31,16 +36,27 @@ export function BlueprintResourceCalculator() {
   const dragDepthRef = useRef(0);
 
   const tabs = useMemo(
-    () => [
-      { id: "ingots" as const, label: "Ingots", count: result?.ingots.length ?? 0 },
-      {
-        id: "components" as const,
-        label: "Components",
-        count: result?.components.length ?? 0,
-      },
-      { id: "blocks" as const, label: "Blocks", count: result?.blocks.length ?? 0 },
-      { id: "warnings" as const, label: "Warnings", count: result?.warnings.length ?? 0 },
-    ],
+    () => {
+      const resultTabs: ResultTabDefinition[] = [
+        { id: "ingots" as const, label: "Ingots", count: result?.ingots.length ?? 0 },
+        {
+          id: "components" as const,
+          label: "Components",
+          count: result?.components.length ?? 0,
+        },
+        { id: "blocks" as const, label: "Blocks", count: result?.blocks.length ?? 0 },
+      ];
+
+      if ((result?.warnings.length ?? 0) > 0) {
+        resultTabs.push({
+          id: "warnings" as const,
+          label: "Warnings",
+          count: result?.warnings.length ?? 0,
+        });
+      }
+
+      return resultTabs;
+    },
     [result],
   );
 

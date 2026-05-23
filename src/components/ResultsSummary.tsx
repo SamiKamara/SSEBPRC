@@ -8,10 +8,11 @@ type ResultsSummaryProps = {
 };
 
 export function ResultsSummary({ result }: Readonly<ResultsSummaryProps>) {
-  const warningCount = result.warnings.filter((warning) => warning.severity !== "info").length;
+  const warningCount = result.warnings.length;
+  const gridColumns = warningCount > 0 ? "sm:grid-cols-2 xl:grid-cols-5" : "sm:grid-cols-2 xl:grid-cols-4";
 
   return (
-    <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+    <section className={`grid gap-3 ${gridColumns}`}>
       <SummaryTile
         icon={<Layers3 aria-hidden="true" className="size-5" />}
         label="Blocks"
@@ -32,12 +33,14 @@ export function ResultsSummary({ result }: Readonly<ResultsSummaryProps>) {
         label="Ingot types"
         value={result.ingots.length}
       />
-      <SummaryTile
-        icon={<AlertTriangle aria-hidden="true" className="size-5" />}
-        label="Warnings"
-        value={warningCount}
-        tone={warningCount > 0 ? "warning" : "neutral"}
-      />
+      {warningCount > 0 ? (
+        <SummaryTile
+          icon={<AlertTriangle aria-hidden="true" className="size-5" />}
+          label="Warnings"
+          value={warningCount}
+          tone="warning"
+        />
+      ) : null}
     </section>
   );
 }

@@ -6,12 +6,7 @@ import {
   normalizeSubtypeId,
   normalizeTypeId,
 } from "@/lib/normalization";
-import type {
-  BlueprintBlockRef,
-  CalculationWarning,
-  ParsedBlueprint,
-  UploadedBlueprint,
-} from "@/lib/types";
+import type { BlueprintBlockRef, CalculationWarning, ParsedBlueprint, UploadedBlueprint } from "@/lib/types";
 
 type XmlRecord = Record<string, unknown>;
 
@@ -71,14 +66,6 @@ export function parseBlueprint(uploadedBlueprint: UploadedBlueprint): ParsedBlue
   }
 
   const inventoryItemNodeCount = collectElementsByLocalName(parsed, "Items").length;
-
-  if (inventoryItemNodeCount > 0) {
-    warnings.push({
-      kind: "ignored-inventory",
-      severity: "info",
-      message: "Blueprint inventory and cargo contents were ignored for build-cost calculation.",
-    });
-  }
 
   if (blocksMissingSubtype > 0) {
     warnings.push({
