@@ -1,0 +1,462 @@
+[
+  {
+    "subtypeId": "BulletproofGlass",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Silicon",
+        "amount": 15
+      }
+    ]
+  },
+  {
+    "subtypeId": "Canvas",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 2
+      },
+      {
+        "subtypeId": "Silicon",
+        "amount": 35
+      }
+    ]
+  },
+  {
+    "subtypeId": "Computer",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 0.5
+      },
+      {
+        "subtypeId": "Silicon",
+        "amount": 0.2
+      }
+    ]
+  },
+  {
+    "subtypeId": "Construction",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 8
+      }
+    ]
+  },
+  {
+    "subtypeId": "Detector",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 5
+      },
+      {
+        "subtypeId": "Nickel",
+        "amount": 15
+      }
+    ]
+  },
+  {
+    "subtypeId": "Display",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 1
+      },
+      {
+        "subtypeId": "Silicon",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "subtypeId": "Explosives",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Silicon",
+        "amount": 0.5
+      },
+      {
+        "subtypeId": "Magnesium",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "subtypeId": "Girder",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "subtypeId": "GravityGenerator",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 600
+      },
+      {
+        "subtypeId": "Cobalt",
+        "amount": 220
+      },
+      {
+        "subtypeId": "Silver",
+        "amount": 5
+      },
+      {
+        "subtypeId": "Gold",
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "subtypeId": "InteriorPlate",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "subtypeId": "LargeTube",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 30
+      }
+    ]
+  },
+  {
+    "subtypeId": "Medical",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 60
+      },
+      {
+        "subtypeId": "Nickel",
+        "amount": 70
+      },
+      {
+        "subtypeId": "Silver",
+        "amount": 20
+      }
+    ]
+  },
+  {
+    "subtypeId": "MetalGrid",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 12
+      },
+      {
+        "subtypeId": "Nickel",
+        "amount": 5
+      },
+      {
+        "subtypeId": "Cobalt",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "subtypeId": "Motor",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 20
+      },
+      {
+        "subtypeId": "Nickel",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "subtypeId": "PowerCell",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 10
+      },
+      {
+        "subtypeId": "Silicon",
+        "amount": 1
+      },
+      {
+        "subtypeId": "Nickel",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "subtypeId": "PrototechCapacitor",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 12
+      },
+      {
+        "subtypeId": "Silicon",
+        "amount": 4
+      },
+      {
+        "subtypeId": "Silver",
+        "amount": 3
+      },
+      {
+        "subtypeId": "Gold",
+        "amount": 6
+      },
+      {
+        "subtypeId": "PrototechScrap",
+        "amount": 1.5
+      }
+    ]
+  },
+  {
+    "subtypeId": "PrototechCircuitry",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 5
+      },
+      {
+        "subtypeId": "Silicon",
+        "amount": 8
+      },
+      {
+        "subtypeId": "Gold",
+        "amount": 2
+      },
+      {
+        "subtypeId": "Platinum",
+        "amount": 1.5
+      },
+      {
+        "subtypeId": "PrototechScrap",
+        "amount": 1.75
+      }
+    ]
+  },
+  {
+    "subtypeId": "PrototechCoolingUnit",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 80
+      },
+      {
+        "subtypeId": "Gold",
+        "amount": 12
+      },
+      {
+        "subtypeId": "Platinum",
+        "amount": 3.25
+      },
+      {
+        "subtypeId": "PrototechScrap",
+        "amount": 2.5
+      }
+    ]
+  },
+  {
+    "subtypeId": "PrototechMachinery",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 45
+      },
+      {
+        "subtypeId": "Nickel",
+        "amount": 12
+      },
+      {
+        "subtypeId": "Silicon",
+        "amount": 7
+      },
+      {
+        "subtypeId": "Gold",
+        "amount": 3
+      },
+      {
+        "subtypeId": "PrototechScrap",
+        "amount": 1.15
+      }
+    ]
+  },
+  {
+    "subtypeId": "PrototechPanel",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 35
+      },
+      {
+        "subtypeId": "Nickel",
+        "amount": 7
+      },
+      {
+        "subtypeId": "Cobalt",
+        "amount": 3
+      },
+      {
+        "subtypeId": "Magnesium",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "subtypeId": "PrototechPropulsionUnit",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 60
+      },
+      {
+        "subtypeId": "Cobalt",
+        "amount": 24
+      },
+      {
+        "subtypeId": "Gold",
+        "amount": 6
+      },
+      {
+        "subtypeId": "Platinum",
+        "amount": 3
+      },
+      {
+        "subtypeId": "PrototechScrap",
+        "amount": 1.25
+      }
+    ]
+  },
+  {
+    "subtypeId": "RadioCommunication",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 8
+      },
+      {
+        "subtypeId": "Silicon",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "subtypeId": "Reactor",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Stone",
+        "amount": 20
+      },
+      {
+        "subtypeId": "Iron",
+        "amount": 15
+      },
+      {
+        "subtypeId": "Silver",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "subtypeId": "SmallTube",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "subtypeId": "SolarCell",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Nickel",
+        "amount": 3
+      },
+      {
+        "subtypeId": "Silicon",
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "subtypeId": "SteelPlate",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 21
+      }
+    ]
+  },
+  {
+    "subtypeId": "Superconductor",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 10
+      },
+      {
+        "subtypeId": "Gold",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "subtypeId": "Thrust",
+    "source": "vanilla",
+    "ingots": [
+      {
+        "subtypeId": "Iron",
+        "amount": 30
+      },
+      {
+        "subtypeId": "Cobalt",
+        "amount": 10
+      },
+      {
+        "subtypeId": "Gold",
+        "amount": 1
+      },
+      {
+        "subtypeId": "Platinum",
+        "amount": 0.4
+      }
+    ]
+  }
+]
