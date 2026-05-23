@@ -176,7 +176,7 @@ export function BlueprintResourceCalculator() {
           </div>
         </div>
       ) : null}
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-5">
+      <div className="mx-auto flex w-full max-w-[950px] flex-col gap-5">
         <header className="border-b border-slate-800 pb-4">
           <div className="flex flex-col gap-3">
             <div className="min-w-0">
