@@ -2,7 +2,7 @@
 
 import { ChangeEvent, DragEvent, useRef, useState } from "react";
 import { FileArchive, FileUp, Upload } from "lucide-react";
-import { acceptedBlueprintExtensions, formatBytes, maxSbcBytes, maxZipBytes } from "@/lib/file-validation";
+import { acceptedBlueprintExtensions } from "@/lib/file-validation";
 
 type FileDropzoneProps = {
   isBusy: boolean;
@@ -55,8 +55,8 @@ export function FileDropzone({
       onDrop={handleDrop}
       className={
         isDragOver
-          ? "rounded-lg border-2 border-cyan-700 bg-cyan-50 p-4 shadow-panel transition"
-          : "rounded-lg border-2 border-dashed border-slate-300 bg-white p-4 shadow-panel transition"
+          ? "rounded-lg border-2 border-cyan-400 bg-cyan-950/50 p-4 shadow-panel transition"
+          : "rounded-lg border-2 border-dashed border-slate-700 bg-slate-950/90 p-4 shadow-panel transition"
       }
     >
       <input
@@ -69,7 +69,7 @@ export function FileDropzone({
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex min-w-0 items-start gap-3">
-          <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-slate-950 text-white">
+          <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-md bg-cyan-400 text-slate-950">
             {visibleFileName?.toLowerCase().endsWith(".zip") ? (
               <FileArchive aria-hidden="true" className="size-5" />
             ) : (
@@ -77,13 +77,10 @@ export function FileDropzone({
             )}
           </div>
           <div className="min-w-0">
-            <h2 className="text-lg font-semibold text-slate-950">
+            <h2 className="text-lg font-semibold text-slate-50">
               {visibleFileName || "Upload blueprint"}
             </h2>
-            <p className="mt-1 text-sm text-slate-600">
-              bp.sbc or zipped blueprint folder · SBC {formatBytes(maxSbcBytes)} · ZIP{" "}
-              {formatBytes(maxZipBytes)}
-            </p>
+            <p className="mt-1 text-sm text-slate-400">bp.sbc or zipped blueprint folder</p>
           </div>
         </div>
 
@@ -91,7 +88,7 @@ export function FileDropzone({
           type="button"
           disabled={isBusy}
           onClick={() => inputRef.current?.click()}
-          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-cyan-800 px-4 py-2.5 font-medium text-white transition hover:bg-cyan-900 focus:outline-none focus:ring-4 focus:ring-cyan-200 disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-cyan-400 px-4 py-2.5 font-medium text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/30 disabled:cursor-not-allowed disabled:opacity-60"
         >
           <Upload aria-hidden="true" className="size-5" />
           <span>Select file</span>

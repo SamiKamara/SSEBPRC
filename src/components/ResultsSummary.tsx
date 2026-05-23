@@ -54,12 +54,12 @@ function SummaryTile({
   tone?: "neutral" | "warning";
 }>) {
   return (
-    <div className="rounded-md border border-slate-300 bg-white px-4 py-3 shadow-sm">
+    <div className="rounded-md border border-slate-800 bg-slate-950 px-4 py-3 shadow-sm">
       <div className="flex items-center justify-between gap-3">
-        <span className="text-sm font-medium text-slate-600">{label}</span>
-        <span className={tone === "warning" ? "text-amber-700" : "text-cyan-800"}>{icon}</span>
+        <span className="text-sm font-medium text-slate-400">{label}</span>
+        <span className={tone === "warning" ? "text-amber-300" : "text-cyan-300"}>{icon}</span>
       </div>
-      <p className="mt-2 text-2xl font-semibold tabular-nums text-slate-950">
+      <p className="mt-2 text-2xl font-semibold tabular-nums text-slate-50">
         {formatAmount(value)}
       </p>
     </div>

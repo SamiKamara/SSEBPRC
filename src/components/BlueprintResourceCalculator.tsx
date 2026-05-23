@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   AlertTriangle,
-  Database,
-  Download,
   FileJson,
   Loader2,
   RotateCcw,
@@ -13,18 +11,15 @@ import { FileDropzone } from "@/components/FileDropzone";
 import { ResourceTable } from "@/components/ResourceTable";
 import { ResultsSummary } from "@/components/ResultsSummary";
 import { WarningPanel } from "@/components/WarningPanel";
-import { calculationToJson, fullCalculationToCsv } from "@/lib/export";
+import { calculationToJson } from "@/lib/export";
 import { validateBlueprintFile } from "@/lib/file-validation";
-import type {
-  CalculateErrorResponse,
-  CalculateResponse,
-  DefinitionsResponse,
-} from "@/lib/types";
+import type { CalculateErrorResponse, CalculateResponse } from "@/lib/types";
 
 type UploadState = "idle" | "validating" | "uploading" | "success" | "error";
 type ResultTab = "ingots" | "components" | "blocks" | "warnings";
 
 const requestTimeoutMs = 45000;
+const appTitle = "Shagatan’s Space Engineers Blueprint Resource Calculator";
 
 export function BlueprintResourceCalculator() {
   const [uploadState, setUploadState] = useState<UploadState>("idle");
@@ -32,39 +27,6 @@ export function BlueprintResourceCalculator() {
   const [error, setError] = useState("");
   const [result, setResult] = useState<CalculateResponse | null>(null);
   const [activeTab, setActiveTab] = useState<ResultTab>("ingots");
-  const [definitionVersion, setDefinitionVersion] = useState("Loading");
-  const [definitionNote, setDefinitionNote] = useState("");
-
-  useEffect(() => {
-    let ignore = false;
-
-    async function loadDefinitionManifest() {
-      try {
-        const response = await fetch("/api/definitions", { cache: "no-store" });
-
-        if (!response.ok) {
-          throw new Error("Definition data could not be loaded.");
-        }
-
-        const data = (await response.json()) as DefinitionsResponse;
-
-        if (!ignore) {
-          setDefinitionVersion(data.manifest.definitionVersion);
-          setDefinitionNote(data.manifest.note ?? "");
-        }
-      } catch {
-        if (!ignore) {
-          setDefinitionVersion("unavailable");
-        }
-      }
-    }
-
-    void loadDefinitionManifest();
-
-    return () => {
-      ignore = true;
-    };
-  }, []);
 
   const tabs = useMemo(
     () => [
@@ -81,8 +43,6 @@ export function BlueprintResourceCalculator() {
   );
 
   const isBusy = uploadState === "validating" || uploadState === "uploading";
-  const headline =
-    result?.blueprint.displayName || result?.blueprint.fileName || "Blueprint resource calculator";
 
   const handleFileSelected = async (file: File) => {
     setUploadState("validating");
@@ -117,7 +77,6 @@ export function BlueprintResourceCalculator() {
       }
 
       setResult(data);
-      setDefinitionVersion(data.definitionVersion);
       setActiveTab("ingots");
       setUploadState("success");
     } catch (uploadError) {
@@ -144,33 +103,23 @@ export function BlueprintResourceCalculator() {
     downloadText(`${resultFileBase(result)}.json`, calculationToJson(result), "application/json");
   };
 
-  const downloadCsv = () => {
-    if (!result) {
-      return;
-    }
-
-    downloadText(`${resultFileBase(result)}.csv`, fullCalculationToCsv(result), "text/csv;charset=utf-8");
-  };
-
   return (
-    <main className="min-h-screen px-4 py-5 text-slate-950 sm:px-6 lg:px-8">
+    <main className="min-h-screen px-4 py-5 text-slate-50 sm:px-6 lg:px-8">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-5">
-        <header className="border-b border-slate-300 pb-4">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <header className="border-b border-slate-800 pb-4">
+          <div className="flex flex-col gap-3">
             <div className="min-w-0">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-800">
-                SSEBPRC
-              </p>
-              <h1 className="text-2xl font-semibold text-slate-950 sm:text-4xl">
-                {headline}
+              <h1
+                aria-label={appTitle}
+                className="flex flex-col gap-1 font-semibold tracking-normal"
+              >
+                <span className="text-3xl leading-tight text-slate-50 sm:text-4xl">
+                  Shagatan’s Space Engineers
+                </span>
+                <span className="text-xl leading-snug text-blue-300 sm:text-2xl">
+                  Blueprint Resource Calculator
+                </span>
               </h1>
-            </div>
-            <div className="flex flex-wrap items-center gap-2 text-sm text-slate-700">
-              <Database aria-hidden="true" className="size-4 text-cyan-800" />
-              <span className="font-medium">Definitions</span>
-              <span className="rounded-full border border-slate-300 bg-white px-2.5 py-1 font-mono text-xs">
-                {definitionVersion}
-              </span>
             </div>
           </div>
         </header>
@@ -181,21 +130,15 @@ export function BlueprintResourceCalculator() {
           onFileSelected={(file) => void handleFileSelected(file)}
         />
 
-        {definitionNote ? (
-          <div className="rounded-md border border-cyan-200 bg-cyan-50 px-4 py-3 text-sm text-cyan-950">
-            {definitionNote}
-          </div>
-        ) : null}
-
         {isBusy ? (
-          <div className="flex min-h-28 items-center justify-center rounded-md border border-slate-300 bg-white text-slate-700 shadow-sm">
-            <Loader2 aria-hidden="true" className="mr-2 size-5 animate-spin text-cyan-800" />
+          <div className="flex min-h-28 items-center justify-center rounded-md border border-slate-800 bg-slate-950 text-slate-200 shadow-sm">
+            <Loader2 aria-hidden="true" className="mr-2 size-5 animate-spin text-cyan-300" />
             {uploadState === "validating" ? "Checking file" : "Calculating resources"}
           </div>
         ) : null}
 
         {error ? (
-          <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+          <div className="rounded-md border border-red-500/40 bg-red-950/60 px-4 py-3 text-sm text-red-100">
             <div className="flex items-start gap-2">
               <AlertTriangle aria-hidden="true" className="mt-0.5 size-5 shrink-0" />
               <span>{error}</span>
@@ -210,16 +153,8 @@ export function BlueprintResourceCalculator() {
               <div className="flex shrink-0 flex-wrap gap-2">
                 <button
                   type="button"
-                  onClick={downloadCsv}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 py-2.5 font-medium text-slate-900 transition hover:border-cyan-700 hover:text-cyan-900 focus:outline-none focus:ring-4 focus:ring-cyan-100"
-                >
-                  <Download aria-hidden="true" className="size-5" />
-                  <span>CSV</span>
-                </button>
-                <button
-                  type="button"
                   onClick={downloadJson}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 py-2.5 font-medium text-slate-900 transition hover:border-cyan-700 hover:text-cyan-900 focus:outline-none focus:ring-4 focus:ring-cyan-100"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-950 px-4 py-2.5 font-medium text-slate-100 transition hover:border-cyan-400 hover:text-cyan-100 focus:outline-none focus:ring-4 focus:ring-cyan-400/20"
                 >
                   <FileJson aria-hidden="true" className="size-5" />
                   <span>JSON</span>
@@ -227,7 +162,7 @@ export function BlueprintResourceCalculator() {
                 <button
                   type="button"
                   onClick={reset}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 py-2.5 font-medium text-slate-900 transition hover:border-cyan-700 hover:text-cyan-900 focus:outline-none focus:ring-4 focus:ring-cyan-100"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-950 px-4 py-2.5 font-medium text-slate-100 transition hover:border-cyan-400 hover:text-cyan-100 focus:outline-none focus:ring-4 focus:ring-cyan-400/20"
                 >
                   <RotateCcw aria-hidden="true" className="size-5" />
                   <span>Reset</span>
@@ -236,7 +171,7 @@ export function BlueprintResourceCalculator() {
             </div>
 
             <div className="overflow-x-auto">
-              <div className="inline-flex min-w-full gap-1 rounded-md border border-slate-300 bg-white p-1 shadow-sm sm:min-w-0">
+              <div className="inline-flex min-w-full gap-1 rounded-md border border-slate-800 bg-slate-950 p-1 shadow-sm sm:min-w-0">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
@@ -244,12 +179,12 @@ export function BlueprintResourceCalculator() {
                     onClick={() => setActiveTab(tab.id)}
                     className={
                       activeTab === tab.id
-                        ? "inline-flex min-h-10 flex-1 items-center justify-center gap-2 rounded px-3 py-2 text-sm font-semibold text-white bg-slate-950"
-                        : "inline-flex min-h-10 flex-1 items-center justify-center gap-2 rounded px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+                        ? "inline-flex min-h-10 flex-1 items-center justify-center gap-2 rounded bg-cyan-400 px-3 py-2 text-sm font-semibold text-slate-950"
+                        : "inline-flex min-h-10 flex-1 items-center justify-center gap-2 rounded px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-slate-50"
                     }
                   >
                     <span>{tab.label}</span>
-                    <span className="rounded-full bg-white/90 px-2 py-0.5 text-xs text-slate-800">
+                    <span className="rounded-full bg-slate-900/90 px-2 py-0.5 text-xs text-slate-100">
                       {tab.count}
                     </span>
                   </button>
