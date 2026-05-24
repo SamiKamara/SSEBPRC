@@ -94,7 +94,7 @@ export function calculateBlueprintResources(
   }
 
   const components = sortRows(mapToRows(componentCounts, componentLabels));
-  const ingots = sortRows(mapToRows(ingotCounts));
+  const ingots = sortRows(mapToRows(ingotCounts, undefined, roundWholeResourceAmount));
 
   return {
     blueprint: {
@@ -194,11 +194,15 @@ function summarizeComponents(components: BlockDefinition["components"]) {
   }));
 }
 
-function mapToRows(counts: Map<string, number>, labelLookup?: Map<string, string>) {
+function mapToRows(
+  counts: Map<string, number>,
+  labelLookup?: Map<string, string>,
+  roundAmount = roundResourceAmount,
+) {
   return [...counts.entries()].map(([key, count]) => ({
     key,
     label: labelLookup?.get(key) ?? key,
-    count: roundResourceAmount(count),
+    count: roundAmount(count),
   }));
 }
 
@@ -218,4 +222,8 @@ function addToMap(map: Map<string, number>, key: string, amount: number) {
 
 function roundResourceAmount(value: number) {
   return Math.round((value + Number.EPSILON) * 1000) / 1000;
+}
+
+function roundWholeResourceAmount(value: number) {
+  return Math.round(value + Number.EPSILON);
 }

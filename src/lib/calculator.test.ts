@@ -101,6 +101,23 @@ test("calculator can use vanilla 1x assembler efficiency", () => {
   assert.equal(result.settings.assemblerEfficiencyMultiplier, 1);
 });
 
+test("calculator rounds ingot totals to whole numbers", () => {
+  const result = calculateBlueprintResources(baseBlueprint, {
+    ...definitions,
+    componentRecipes: [
+      {
+        subtypeId: "SteelPlate",
+        displayName: "Steel Plate",
+        source: "vanilla",
+        ingots: [{ subtypeId: "Iron", amount: 10 }],
+      },
+    ],
+  });
+
+  assert.equal(result.components.find((row) => row.key === "SteelPlate")?.count, 10);
+  assert.equal(result.ingots.find((row) => row.key === "Iron")?.count, 33);
+});
+
 test("calculator marks ore amounts unavailable for ingots the basic refinery cannot process", () => {
   const result = calculateBlueprintResources(baseBlueprint, {
     ...definitions,
