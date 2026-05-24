@@ -7,6 +7,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 import { FileDropzone } from "@/components/FileDropzone";
+import { OresTable } from "@/components/OresTable";
 import { ResourceTable } from "@/components/ResourceTable";
 import { ResultsSummary } from "@/components/ResultsSummary";
 import { WarningPanel } from "@/components/WarningPanel";
@@ -14,7 +15,7 @@ import { validateBlueprintFile } from "@/lib/file-validation";
 import type { CalculateErrorResponse, CalculateResponse } from "@/lib/types";
 
 type UploadState = "idle" | "validating" | "uploading" | "success" | "error";
-type ResultTab = "ingots" | "components" | "blocks" | "warnings";
+type ResultTab = "ingots" | "ores" | "components" | "blocks" | "warnings";
 type ResultTabDefinition = {
   id: ResultTab;
   label: string;
@@ -37,6 +38,7 @@ export function BlueprintResourceCalculator() {
     () => {
       const resultTabs: ResultTabDefinition[] = [
         { id: "ingots" as const, label: "Ingots", count: result?.ingots.length ?? 0 },
+        { id: "ores" as const, label: "Ores", count: result?.ores.length ?? 0 },
         {
           id: "components" as const,
           label: "Components",
@@ -249,6 +251,7 @@ export function BlueprintResourceCalculator() {
                 emptyText="No ingot requirements found."
               />
             ) : null}
+            {activeTab === "ores" ? <OresTable rows={result.ores} /> : null}
             {activeTab === "components" ? (
               <ResourceTable
                 title="Components"

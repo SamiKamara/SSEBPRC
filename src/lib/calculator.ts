@@ -1,4 +1,5 @@
 import { resolveBlockAlias, resolveComponentAlias } from "@/lib/compatibility";
+import { calculateOreRequirements } from "@/lib/ore-yields";
 import {
   formatDefinitionLabel,
   makeComponentKey,
@@ -82,6 +83,9 @@ export function calculateBlueprintResources(
     }
   }
 
+  const components = sortRows(mapToRows(componentCounts, componentLabels));
+  const ingots = sortRows(mapToRows(ingotCounts));
+
   return {
     blueprint: {
       fileName: blueprint.fileName,
@@ -91,8 +95,9 @@ export function calculateBlueprintResources(
       blockCount: blueprint.blockCount,
     },
     blocks: sortRows([...blockCounts.values()]),
-    components: sortRows(mapToRows(componentCounts, componentLabels)),
-    ingots: sortRows(mapToRows(ingotCounts)),
+    components,
+    ingots,
+    ores: calculateOreRequirements(ingots),
     warnings,
     definitionVersion: definitions.manifest.definitionVersion,
   };

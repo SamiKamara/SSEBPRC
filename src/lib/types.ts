@@ -82,6 +82,7 @@ export type CalculateResponse = {
   blocks: CountRow[];
   components: CountRow[];
   ingots: CountRow[];
+  ores: OreRequirementRow[];
   warnings: CalculationWarning[];
   definitionVersion: string;
 };
@@ -90,6 +91,23 @@ export type CountRow = {
   key: string;
   label: string;
   count: number;
+};
+
+export type OreYieldColumnKey =
+  | "refineryYield4"
+  | "refineryYield3"
+  | "refineryYield2"
+  | "refineryYield1"
+  | "refineryYield0"
+  | "basicRefinery";
+
+export type OreRequirementRow = {
+  key: string;
+  label: string;
+  ingotKey: string;
+  ingotLabel: string;
+  ingotCount: number;
+  amounts: Record<OreYieldColumnKey, number | null>;
 };
 
 export type CalculationWarning = {

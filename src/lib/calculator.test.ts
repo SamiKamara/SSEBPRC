@@ -82,5 +82,35 @@ test("calculator sums repeated components and returns partial results for unknow
   assert.equal(result.components.find((row) => row.key === "SteelPlate")?.count, 10);
   assert.equal(result.components.find((row) => row.key === "SteelPlate")?.label, "Steel Plate");
   assert.equal(result.ingots.find((row) => row.key === "Iron")?.count, 210);
+  assert.equal(result.ores.find((row) => row.key === "Iron")?.amounts.refineryYield4, 150);
+  assert.equal(result.ores.find((row) => row.key === "Iron")?.amounts.refineryYield0, 300);
+  assert.equal(result.ores.find((row) => row.key === "Iron")?.amounts.basicRefinery, 429);
   assert.equal(result.warnings.some((warning) => warning.kind === "missing-block-definition"), true);
+});
+
+test("calculator marks ore amounts unavailable for ingots the basic refinery cannot process", () => {
+  const result = calculateBlueprintResources(baseBlueprint, {
+    ...definitions,
+    blockDefinitions: [
+      {
+        typeId: "MyObjectBuilder_CubeBlock",
+        subtypeId: "LargeBlockArmorBlock",
+        components: [{ subtypeId: "GoldComponent", count: 2 }],
+      },
+    ],
+    componentRecipes: [
+      {
+        subtypeId: "GoldComponent",
+        source: "vanilla",
+        ingots: [{ subtypeId: "Gold", amount: 5 }],
+      },
+    ],
+  });
+
+  const goldOre = result.ores.find((row) => row.key === "Gold");
+
+  assert.equal(result.ingots.find((row) => row.key === "Gold")?.count, 20);
+  assert.equal(goldOre?.amounts.refineryYield4, 1000);
+  assert.equal(goldOre?.amounts.refineryYield0, 2000);
+  assert.equal(goldOre?.amounts.basicRefinery, null);
 });

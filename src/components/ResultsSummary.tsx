@@ -12,7 +12,7 @@ export function ResultsSummary({ result }: Readonly<ResultsSummaryProps>) {
   const gridColumns = warningCount > 0 ? "sm:grid-cols-2 xl:grid-cols-5" : "sm:grid-cols-2 xl:grid-cols-4";
 
   return (
-    <section className={`grid gap-3 ${gridColumns}`}>
+    <section className={`grid flex-1 gap-3 ${gridColumns}`}>
       <SummaryTile
         icon={<Layers3 aria-hidden="true" className="size-5" />}
         label="Blocks"
