@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { BlueprintParseError, parseBlueprint } from "@/lib/blueprint-parser";
 import { calculateBlueprintResources } from "@/lib/calculator";
+import { normalizeAssemblerEfficiencyMultiplier } from "@/lib/calculation-settings";
 import { loadDefinitions } from "@/lib/definition-loader";
 import { validateBlueprintFile } from "@/lib/file-validation";
 import type { CalculateErrorResponse, UploadedBlueprint } from "@/lib/types";
@@ -36,7 +37,11 @@ export async function POST(request: Request) {
       xml,
     };
     const blueprint = parseBlueprint(uploadedBlueprint);
-    const response = calculateBlueprintResources(blueprint, loadDefinitions());
+    const response = calculateBlueprintResources(blueprint, loadDefinitions(), {
+      assemblerEfficiencyMultiplier: normalizeAssemblerEfficiencyMultiplier(
+        formData.get("assemblerEfficiencyMultiplier"),
+      ) ?? undefined,
+    });
 
     return NextResponse.json(response);
   } catch (error) {

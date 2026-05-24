@@ -1,4 +1,8 @@
 import { resolveBlockAlias, resolveComponentAlias } from "@/lib/compatibility";
+import {
+  normalizeCalculationSettings,
+  type CalculationSettings,
+} from "@/lib/calculation-settings";
 import { calculateOreRequirements } from "@/lib/ore-yields";
 import {
   formatDefinitionLabel,
@@ -24,7 +28,9 @@ type ComponentRecipeLookup = Map<string, ComponentRecipe>;
 export function calculateBlueprintResources(
   blueprint: ParsedBlueprint,
   definitions: DefinitionData,
+  settings?: Partial<CalculationSettings>,
 ): CalculateResponse {
+  const calculationSettings = normalizeCalculationSettings(settings);
   const blockDefinitions = buildBlockDefinitionLookup(definitions.blockDefinitions);
   const componentRecipes = buildComponentRecipeLookup(definitions.componentRecipes);
   const warnings: CalculationWarning[] = [...blueprint.warnings];
@@ -79,7 +85,11 @@ export function calculateBlueprintResources(
     }
 
     for (const ingot of recipe.ingots) {
-      addToMap(ingotCounts, normalizeSubtypeId(ingot.subtypeId), componentCount * ingot.amount);
+      addToMap(
+        ingotCounts,
+        normalizeSubtypeId(ingot.subtypeId),
+        (componentCount * ingot.amount) / calculationSettings.assemblerEfficiencyMultiplier,
+      );
     }
   }
 
@@ -100,6 +110,7 @@ export function calculateBlueprintResources(
     ores: calculateOreRequirements(ingots),
     warnings,
     definitionVersion: definitions.manifest.definitionVersion,
+    settings: calculationSettings,
   };
 }
 

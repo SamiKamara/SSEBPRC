@@ -85,6 +85,9 @@ export type CalculateResponse = {
   ores: OreRequirementRow[];
   warnings: CalculationWarning[];
   definitionVersion: string;
+  settings: {
+    assemblerEfficiencyMultiplier: number;
+  };
 };
 
 export type CountRow = {

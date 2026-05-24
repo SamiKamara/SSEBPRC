@@ -13,6 +13,7 @@ Repository: https://github.com/SamiKamara/SSEBPRC
 - Count blocks by normalized `TypeId/SubtypeId`.
 - Resolve block component requirements from bundled vanilla Space Engineers definition data.
 - Resolve component ingot recipes.
+- Apply a configurable assembler efficiency multiplier to ingot and ore totals, defaulting to `3x`.
 - Show unresolved blocks or components as warnings instead of failing the whole calculation.
 - Copy result tables as two-column lists with `Name` and `Count`.
 

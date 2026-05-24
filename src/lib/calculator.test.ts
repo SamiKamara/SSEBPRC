@@ -81,11 +81,24 @@ test("calculator sums repeated components and returns partial results for unknow
   assert.equal(result.blocks.find((row) => row.key === "CubeBlock/LargeBlockArmorBlock")?.label, "Light Armor Block");
   assert.equal(result.components.find((row) => row.key === "SteelPlate")?.count, 10);
   assert.equal(result.components.find((row) => row.key === "SteelPlate")?.label, "Steel Plate");
+  assert.equal(result.ingots.find((row) => row.key === "Iron")?.count, 70);
+  assert.equal(result.ores.find((row) => row.key === "Iron")?.amounts.refineryYield4, 50);
+  assert.equal(result.ores.find((row) => row.key === "Iron")?.amounts.refineryYield0, 100);
+  assert.equal(result.ores.find((row) => row.key === "Iron")?.amounts.basicRefinery, 143);
+  assert.equal(result.settings.assemblerEfficiencyMultiplier, 3);
+  assert.equal(result.warnings.some((warning) => warning.kind === "missing-block-definition"), true);
+});
+
+test("calculator can use vanilla 1x assembler efficiency", () => {
+  const result = calculateBlueprintResources(baseBlueprint, definitions, {
+    assemblerEfficiencyMultiplier: 1,
+  });
+
   assert.equal(result.ingots.find((row) => row.key === "Iron")?.count, 210);
   assert.equal(result.ores.find((row) => row.key === "Iron")?.amounts.refineryYield4, 150);
   assert.equal(result.ores.find((row) => row.key === "Iron")?.amounts.refineryYield0, 300);
   assert.equal(result.ores.find((row) => row.key === "Iron")?.amounts.basicRefinery, 429);
-  assert.equal(result.warnings.some((warning) => warning.kind === "missing-block-definition"), true);
+  assert.equal(result.settings.assemblerEfficiencyMultiplier, 1);
 });
 
 test("calculator marks ore amounts unavailable for ingots the basic refinery cannot process", () => {
@@ -105,6 +118,8 @@ test("calculator marks ore amounts unavailable for ingots the basic refinery can
         ingots: [{ subtypeId: "Gold", amount: 5 }],
       },
     ],
+  }, {
+    assemblerEfficiencyMultiplier: 1,
   });
 
   const goldOre = result.ores.find((row) => row.key === "Gold");

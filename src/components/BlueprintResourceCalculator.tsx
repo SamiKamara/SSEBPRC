@@ -3,6 +3,7 @@
 import { DragEvent, useMemo, useRef, useState } from "react";
 import {
   AlertTriangle,
+  Gauge,
   Loader2,
   RotateCcw,
 } from "lucide-react";
@@ -11,6 +12,12 @@ import { OresTable } from "@/components/OresTable";
 import { ResourceTable } from "@/components/ResourceTable";
 import { ResultsSummary } from "@/components/ResultsSummary";
 import { WarningPanel } from "@/components/WarningPanel";
+import {
+  defaultAssemblerEfficiencyMultiplier,
+  maxAssemblerEfficiencyMultiplier,
+  minAssemblerEfficiencyMultiplier,
+  normalizeAssemblerEfficiencyMultiplier,
+} from "@/lib/calculation-settings";
 import { validateBlueprintFile } from "@/lib/file-validation";
 import type { CalculateErrorResponse, CalculateResponse } from "@/lib/types";
 
@@ -24,6 +31,7 @@ type ResultTabDefinition = {
 
 const requestTimeoutMs = 45000;
 const appTitle = "Shagatan's Space Engineers Blueprint Resource Calculator";
+const assemblerEfficiencyPresets = [1, 3, 5, 10];
 
 export function BlueprintResourceCalculator() {
   const [uploadState, setUploadState] = useState<UploadState>("idle");
@@ -32,7 +40,11 @@ export function BlueprintResourceCalculator() {
   const [result, setResult] = useState<CalculateResponse | null>(null);
   const [activeTab, setActiveTab] = useState<ResultTab>("ingots");
   const [isPageDragActive, setIsPageDragActive] = useState(false);
+  const [assemblerEfficiencyInput, setAssemblerEfficiencyInput] = useState(
+    String(defaultAssemblerEfficiencyMultiplier),
+  );
   const dragDepthRef = useRef(0);
+  const selectedFileRef = useRef<File | null>(null);
 
   const tabs = useMemo(
     () => {
@@ -61,6 +73,12 @@ export function BlueprintResourceCalculator() {
   );
 
   const isBusy = uploadState === "validating" || uploadState === "uploading";
+  const assemblerEfficiencyMultiplier =
+    normalizeAssemblerEfficiencyMultiplier(assemblerEfficiencyInput) ??
+    defaultAssemblerEfficiencyMultiplier;
+  const hasCustomResultSetting =
+    result?.settings.assemblerEfficiencyMultiplier !== undefined &&
+    result.settings.assemblerEfficiencyMultiplier !== assemblerEfficiencyMultiplier;
 
   const handlePageDragEnter = (event: DragEvent<HTMLElement>) => {
     if (!isFileDrag(event)) {
@@ -112,6 +130,7 @@ export function BlueprintResourceCalculator() {
   };
 
   const handleFileSelected = async (file: File) => {
+    selectedFileRef.current = file;
     setUploadState("validating");
     setSelectedFileName(file.name);
     setError("");
@@ -129,6 +148,7 @@ export function BlueprintResourceCalculator() {
     const timeoutId = window.setTimeout(() => controller.abort(), requestTimeoutMs);
     const formData = new FormData();
     formData.append("blueprint", file);
+    formData.append("assemblerEfficiencyMultiplier", String(assemblerEfficiencyMultiplier));
     setUploadState("uploading");
 
     try {
@@ -160,6 +180,19 @@ export function BlueprintResourceCalculator() {
     setError("");
     setResult(null);
     setActiveTab("ingots");
+    selectedFileRef.current = null;
+  };
+
+  const handleAssemblerEfficiencyBlur = () => {
+    setAssemblerEfficiencyInput(String(assemblerEfficiencyMultiplier));
+  };
+
+  const recalculate = () => {
+    const selectedFile = selectedFileRef.current;
+
+    if (selectedFile) {
+      void handleFileSelected(selectedFile);
+    }
   };
 
   return (
@@ -222,6 +255,59 @@ export function BlueprintResourceCalculator() {
 
         {result ? (
           <section className="grid gap-5">
+            <section className="rounded-md border border-slate-800 bg-slate-950 px-4 py-3 shadow-sm">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <label className="flex min-w-0 items-center gap-2 text-sm font-medium text-slate-200">
+                  <Gauge aria-hidden="true" className="size-5 shrink-0 text-cyan-300" />
+                  <span>Assembler efficiency</span>
+                </label>
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+                  <div className="inline-flex rounded-md border border-slate-700 bg-slate-900 p-1">
+                    {assemblerEfficiencyPresets.map((preset) => (
+                      <button
+                        key={preset}
+                        type="button"
+                        onClick={() => setAssemblerEfficiencyInput(String(preset))}
+                        className={
+                          assemblerEfficiencyMultiplier === preset
+                            ? "inline-flex min-h-9 min-w-12 items-center justify-center rounded bg-cyan-400 px-3 text-sm font-semibold text-slate-950"
+                            : "inline-flex min-h-9 min-w-12 items-center justify-center rounded px-3 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-slate-50"
+                        }
+                      >
+                        {preset}x
+                      </button>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="number"
+                      inputMode="decimal"
+                      min={minAssemblerEfficiencyMultiplier}
+                      max={maxAssemblerEfficiencyMultiplier}
+                      step="0.01"
+                      value={assemblerEfficiencyInput}
+                      onBlur={handleAssemblerEfficiencyBlur}
+                      onChange={(event) => setAssemblerEfficiencyInput(event.target.value)}
+                      aria-label="Custom assembler efficiency"
+                      className="field-input h-11 w-24 text-right"
+                    />
+                    <span className="text-sm font-semibold text-slate-300">x</span>
+                    {hasCustomResultSetting ? (
+                      <button
+                        type="button"
+                        onClick={recalculate}
+                        disabled={isBusy || !selectedFileRef.current}
+                        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm font-medium text-slate-100 transition hover:border-cyan-400 hover:text-cyan-100 focus:outline-none focus:ring-4 focus:ring-cyan-400/20 disabled:cursor-not-allowed disabled:opacity-60"
+                      >
+                        <RotateCcw aria-hidden="true" className="size-4" />
+                        <span>Recalculate</span>
+                      </button>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+            </section>
+
             <div className="overflow-x-auto">
               <div className="inline-flex min-w-full gap-1 rounded-md border border-slate-800 bg-slate-950 p-1 shadow-sm sm:min-w-0">
                 {tabs.map((tab) => (
