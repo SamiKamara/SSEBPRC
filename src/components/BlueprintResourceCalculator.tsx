@@ -345,13 +345,13 @@ export function BlueprintResourceCalculator() {
             ) : null}
             {activeTab === "warnings" ? <WarningPanel warnings={result.warnings} /> : null}
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:justify-between">
               <ResultsSummary result={result} />
-              <div className="flex shrink-0 flex-wrap gap-2">
+              <div className="flex shrink-0 sm:w-32">
                 <button
                   type="button"
                   onClick={reset}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-950 px-4 py-2.5 font-medium text-slate-100 transition hover:border-cyan-400 hover:text-cyan-100 focus:outline-none focus:ring-4 focus:ring-cyan-400/20"
+                  className="inline-flex min-h-20 w-full items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-950 px-4 py-3 font-semibold text-slate-100 transition hover:border-cyan-400 hover:text-cyan-100 focus:outline-none focus:ring-4 focus:ring-cyan-400/20 sm:h-full"
                 >
                   <RotateCcw aria-hidden="true" className="size-5" />
                   <span>Reset</span>
