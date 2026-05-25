@@ -19,9 +19,9 @@ import {
   normalizeAssemblerEfficiencyMultiplier,
 } from "@/lib/calculation-settings";
 import { validateBlueprintFile } from "@/lib/file-validation";
-import type { CalculateErrorResponse, CalculateResponse } from "@/lib/types";
+import type { CalculateResponse } from "@/lib/types";
 
-type UploadState = "idle" | "validating" | "uploading" | "success" | "error";
+type CalculationState = "idle" | "validating" | "loading-data" | "calculating" | "success" | "error";
 type ResultTab = "ingots" | "ores" | "components" | "blocks" | "warnings";
 type ResultTabDefinition = {
   id: ResultTab;
@@ -29,12 +29,11 @@ type ResultTabDefinition = {
   count: number;
 };
 
-const requestTimeoutMs = 45000;
 const appTitle = "Shagatan's Space Engineers Blueprint Resource Calculator";
 const assemblerEfficiencyPresets = [1, 3, 5, 10];
 
 export function BlueprintResourceCalculator() {
-  const [uploadState, setUploadState] = useState<UploadState>("idle");
+  const [calculationState, setCalculationState] = useState<CalculationState>("idle");
   const [selectedFileName, setSelectedFileName] = useState("");
   const [error, setError] = useState("");
   const [result, setResult] = useState<CalculateResponse | null>(null);
@@ -72,7 +71,10 @@ export function BlueprintResourceCalculator() {
     [result],
   );
 
-  const isBusy = uploadState === "validating" || uploadState === "uploading";
+  const isBusy =
+    calculationState === "validating" ||
+    calculationState === "loading-data" ||
+    calculationState === "calculating";
   const assemblerEfficiencyMultiplier =
     normalizeAssemblerEfficiencyMultiplier(assemblerEfficiencyInput) ??
     defaultAssemblerEfficiencyMultiplier;
@@ -131,7 +133,7 @@ export function BlueprintResourceCalculator() {
 
   const handleFileSelected = async (file: File) => {
     selectedFileRef.current = file;
-    setUploadState("validating");
+    setCalculationState("validating");
     setSelectedFileName(file.name);
     setError("");
     setResult(null);
@@ -139,43 +141,32 @@ export function BlueprintResourceCalculator() {
     const validation = validateBlueprintFile(file);
 
     if (!validation.ok) {
-      setUploadState("error");
+      setCalculationState("error");
       setError(validation.error);
       return;
     }
 
-    const controller = new AbortController();
-    const timeoutId = window.setTimeout(() => controller.abort(), requestTimeoutMs);
-    const formData = new FormData();
-    formData.append("blueprint", file);
-    formData.append("assemblerEfficiencyMultiplier", String(assemblerEfficiencyMultiplier));
-    setUploadState("uploading");
-
     try {
-      const response = await fetch("/api/calculate", {
-        method: "POST",
-        body: formData,
-        signal: controller.signal,
+      setCalculationState("loading-data");
+      const { calculateBlueprintInBrowser } = await import(
+        "@/lib/browser-calculation"
+      );
+
+      setCalculationState("calculating");
+      const data = await calculateBlueprintInBrowser(file, {
+        assemblerEfficiencyMultiplier,
       });
-      const data = (await response.json()) as CalculateResponse | CalculateErrorResponse;
-
-      if (!response.ok || "error" in data) {
-        throw new Error("error" in data ? data.error : "Calculation failed.");
-      }
-
       setResult(data);
       setActiveTab("ingots");
-      setUploadState("success");
-    } catch (uploadError) {
-      setUploadState("error");
-      setError(getUploadErrorMessage(uploadError));
-    } finally {
-      window.clearTimeout(timeoutId);
+      setCalculationState("success");
+    } catch (calculationError) {
+      setCalculationState("error");
+      setError(getCalculationErrorMessage(calculationError));
     }
   };
 
   const reset = () => {
-    setUploadState("idle");
+    setCalculationState("idle");
     setSelectedFileName("");
     setError("");
     setResult(null);
@@ -240,7 +231,7 @@ export function BlueprintResourceCalculator() {
         {isBusy ? (
           <div className="flex min-h-28 items-center justify-center rounded-md border border-slate-800 bg-slate-950 text-slate-200 shadow-sm">
             <Loader2 aria-hidden="true" className="mr-2 size-5 animate-spin text-cyan-300" />
-            {uploadState === "validating" ? "Checking file" : "Calculating resources"}
+            {getBusyStateLabel(calculationState)}
           </div>
         ) : null}
 
@@ -378,10 +369,18 @@ function isFileDrag(event: DragEvent<HTMLElement>) {
   return Array.from(event.dataTransfer.types).includes("Files");
 }
 
-function getUploadErrorMessage(uploadError: unknown) {
-  if (uploadError instanceof DOMException && uploadError.name === "AbortError") {
-    return "Calculation timed out. Try a smaller blueprint.";
+function getBusyStateLabel(state: CalculationState) {
+  if (state === "validating") {
+    return "Checking file";
   }
 
-  return uploadError instanceof Error ? uploadError.message : "Calculation failed.";
+  if (state === "loading-data") {
+    return "Loading calculation data";
+  }
+
+  return "Calculating resources";
+}
+
+function getCalculationErrorMessage(calculationError: unknown) {
+  return calculationError instanceof Error ? calculationError.message : "Calculation failed.";
 }

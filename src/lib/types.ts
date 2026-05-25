@@ -127,8 +127,3 @@ export type CalculationWarning = {
 export type DefinitionsResponse = {
   manifest: DefinitionManifest;
 };
-
-export type CalculateErrorResponse = {
-  error: string;
-  warnings?: CalculationWarning[];
-};

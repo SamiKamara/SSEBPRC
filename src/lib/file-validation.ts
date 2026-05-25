@@ -14,7 +14,7 @@ export function validateBlueprintFile(file: File): UploadValidationResult {
     return {
       ok: false,
       status: 400,
-      error: "Unsupported file. Upload a bp.sbc file or a zipped blueprint folder.",
+      error: "Unsupported file. Load a bp.sbc file or a zipped blueprint folder.",
     };
   }
 

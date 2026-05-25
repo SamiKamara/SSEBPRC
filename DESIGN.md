@@ -6,7 +6,7 @@ Design document for a Next.js / Vercel web application that calculates Space Eng
 
 SSEBPRC is a browser-based blueprint resource calculator for Space Engineers.
 
-The user uploads a local blueprint file, usually `bp.sbc` or a zipped blueprint folder, and the app returns:
+The user loads a local blueprint file, usually `bp.sbc` or a zipped blueprint folder, and the app returns:
 
 - how many blocks of each type the blueprint contains
 - how many components must be assembled
@@ -14,7 +14,7 @@ The user uploads a local blueprint file, usually `bp.sbc` or a zipped blueprint 
 - which blocks or components could not be matched to the known definition data
 - exportable summaries for planning, assembler queues, and inventory checks
 
-The core value is fast survival build planning: upload blueprint, see exact material demand, then decide whether the project is affordable.
+The core value is fast survival build planning: load blueprint in the browser, see exact material demand, then decide whether the project is affordable.
 
 ## 2. Architecture Fit With Etsimi
 
@@ -24,20 +24,20 @@ The app should follow the same basic architecture style as `C:\Users\samin\Deskt
 - TypeScript throughout
 - Tailwind CSS for UI
 - one main client component for the interactive tool
-- API route handlers under `src/app/api`
+- API route handlers under `src/app/api` only for metadata or optional saved/shareable records
 - domain logic isolated in `src/lib`
 - simple typed request/response contracts in `src/lib/types.ts`
-- Node.js runtime for API routes that need filesystem-like parsing libraries
+- browser-side calculation for blueprint parsing so blueprint files are not uploaded to the host
 - optional Upstash Redis only for shared/saved records, not for the core calculation
 
-Etsimi is a small focused application, not a large service mesh. SSEBPRC should keep that same shape: the UI calls one or two local API endpoints, and the real work lives in small library modules that are easy to test.
+Etsimi is a small focused application, not a large service mesh. SSEBPRC should keep that same shape: the UI stays focused, and the real work lives in small library modules that are easy to test.
 
 ## 3. MVP Scope
 
 ### Included
 
-- Upload `bp.sbc` XML directly.
-- Upload `.zip` containing a blueprint folder and extract the first valid `bp.sbc`.
+- Load `bp.sbc` XML directly.
+- Load `.zip` containing a blueprint folder and extract the first valid `bp.sbc`.
 - Parse all `CubeGrid` elements and all `CubeBlocks` in a blueprint.
 - Normalize block IDs from blueprint form to definition form:
   - blueprint `xsi:type="MyObjectBuilder_Thrust"` -> `Thrust`
@@ -63,16 +63,16 @@ Etsimi is a small focused application, not a large service mesh. SSEBPRC should 
 
 1. User opens the app.
 2. User drops a `bp.sbc` file or zipped blueprint folder into the upload area.
-3. Client validates file extension and size before upload.
-4. Client sends the file to `POST /api/calculate` as `multipart/form-data`.
-5. Server parses the file and calculates resources.
+3. Client validates file extension and size before loading the calculation bundle.
+4. Client lazy-loads the browser calculation module and bundled definition data.
+5. Browser parses the file and calculates resources locally.
 6. Client renders:
    - headline totals
    - block list
    - component assembly list
    - ingot list
    - warnings for missing definitions
-7. User exports CSV/JSON or uploads another blueprint.
+7. User exports CSV/JSON or loads another blueprint.
 
 ## 5. Proposed File Structure
 
@@ -81,8 +81,6 @@ SSEBPRC/
   src/
     app/
       api/
-        calculate/
-          route.ts
         definitions/
           route.ts
       globals.css
@@ -349,38 +347,34 @@ When the game updates, the preferred maintenance path should be:
 
 Code changes should only be necessary when the underlying meaning changes, not when new optional tags or block definitions appear.
 
-## 10. API Design
+## 10. Browser Calculation And API Design
 
-### `POST /api/calculate`
+### Browser calculation module
 
-Runtime:
+Blueprint calculation runs in the user's browser. `src/components/BlueprintResourceCalculator.tsx`
+validates the selected file first, then dynamically imports `src/lib/browser-calculation.ts`.
+That lazy module pulls in the XML parser, zip reader, calculator, and bundled definition JSON only
+after a valid blueprint file has been selected.
 
-```ts
-export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
-```
+Input:
 
-Request:
-
-- `multipart/form-data`
-- field: `blueprint`
 - accepted extensions: `.sbc`, `.zip`
+- selected browser `File`
+- assembler efficiency multiplier
 
-Response:
+Output:
 
-- `200` with `CalculateResponse`
-- `400` for invalid upload, unsupported file, malformed blueprint
-- `413` for too large file
-- `500` only for unexpected server failures
+- `CalculateResponse`
+- thrown validation or parser error messages for unsupported or malformed files
 
-Server steps:
+Browser steps:
 
-1. validate upload
+1. validate selected file
 2. read XML or extract `bp.sbc` from zip
 3. parse blueprint
 4. load definitions
 5. calculate totals
-6. return JSON
+6. render results
 
 ### `GET /api/definitions`
 
@@ -526,7 +520,7 @@ Manual tests:
 - implement `blueprint-parser.ts`
 - implement `calculator.ts`
 - add static small definition fixtures
-- make `/api/calculate` return real results for fixture data
+- make browser calculation return real results for fixture data
 - add compatibility tests for harmless blueprint format changes
 
 ### Milestone 3: Vanilla Definition Generator
@@ -575,7 +569,7 @@ Build the first version as a stateless calculator:
 - no login
 - no database
 - no saved uploads
-- one upload endpoint
+- no blueprint upload endpoint
 - bundled vanilla definition JSON
 - clear warnings for unknown modded blocks
 - tolerant parser and rerunnable definition generator from the start

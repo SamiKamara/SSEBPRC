@@ -8,7 +8,7 @@ Repository: https://github.com/SamiKamara/SSEBPRC
 
 ## What It Does
 
-- Upload a `bp.sbc` file or a zipped blueprint folder.
+- Load a `bp.sbc` file or a zipped blueprint folder in the browser.
 - Parse every `CubeGrid` and `CubeBlocks` entry from the blueprint XML.
 - Count blocks by normalized `TypeId/SubtypeId`.
 - Resolve block component requirements from bundled vanilla Space Engineers definition data.
@@ -17,7 +17,7 @@ Repository: https://github.com/SamiKamara/SSEBPRC
 - Show unresolved blocks or components as warnings instead of failing the whole calculation.
 - Copy result tables as two-column lists with `Name` and `Count`.
 
-The app does not require an account. Uploaded files are parsed for the current calculation request and are not written to project storage.
+The app does not require an account. Blueprint files are parsed in the user's browser and are not uploaded to the host server. The heavier calculation code and bundled Space Engineers definition data are lazy-loaded only after a valid blueprint file is selected.
 
 ## Tech Stack
 
@@ -26,7 +26,7 @@ The app does not require an account. Uploaded files are parsed for the current c
 - TypeScript
 - Tailwind CSS
 - `fast-xml-parser` for blueprint XML parsing
-- `jszip` for zipped blueprint uploads
+- `jszip` for zipped blueprint loading
 - Node test runner with `tsx`
 
 ## Development
