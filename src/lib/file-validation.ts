@@ -1,6 +1,6 @@
 export const acceptedBlueprintExtensions = [".sbc", ".zip"] as const;
-export const maxSbcBytes = 12 * 1024 * 1024;
-export const maxZipBytes = 24 * 1024 * 1024;
+export const maxSbcBytes = 100 * 1024 * 1024;
+export const maxZipBytes = 100 * 1024 * 1024;
 export const maxZipFileCount = 200;
 
 export type UploadValidationResult =
