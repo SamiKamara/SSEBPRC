@@ -25,6 +25,8 @@ import type {
 type BlockDefinitionLookup = Map<string, BlockDefinition>;
 type ComponentRecipeLookup = Map<string, ComponentRecipe>;
 
+const ingotLabels = new Map([["Stone", "Gravel"]]);
+
 export function calculateBlueprintResources(
   blueprint: ParsedBlueprint,
   definitions: DefinitionData,
@@ -94,7 +96,7 @@ export function calculateBlueprintResources(
   }
 
   const components = sortRows(mapToRows(componentCounts, componentLabels));
-  const ingots = sortRows(mapToRows(ingotCounts, undefined, roundWholeResourceAmount));
+  const ingots = sortRows(mapToRows(ingotCounts, ingotLabels, roundWholeResourceAmount));
 
   return {
     blueprint: {

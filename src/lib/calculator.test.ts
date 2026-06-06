@@ -118,6 +118,26 @@ test("calculator rounds ingot totals to whole numbers", () => {
   assert.equal(result.ingots.find((row) => row.key === "Iron")?.count, 33);
 });
 
+test("calculator labels stone ingots as gravel while keeping stone as the ore", () => {
+  const result = calculateBlueprintResources(baseBlueprint, {
+    ...definitions,
+    componentRecipes: [
+      {
+        subtypeId: "SteelPlate",
+        displayName: "Steel Plate",
+        source: "vanilla",
+        ingots: [{ subtypeId: "Stone", amount: 3 }],
+      },
+    ],
+  });
+
+  const gravel = result.ingots.find((row) => row.key === "Stone");
+  const stone = result.ores.find((row) => row.key === "Stone");
+
+  assert.equal(gravel?.label, "Gravel");
+  assert.equal(stone?.label, "Stone");
+});
+
 test("calculator marks ore amounts unavailable for ingots the basic refinery cannot process", () => {
   const result = calculateBlueprintResources(baseBlueprint, {
     ...definitions,
