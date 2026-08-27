@@ -705,6 +705,60 @@
   },
   {
     "typeId": "BatteryBlock",
+    "subtypeId": "LargeBlockBatteryReskin",
+    "displayName": "Battery Bank",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 15
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "PowerCell",
+        "displayName": "Power Cell",
+        "count": 40
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 40
+      }
+    ]
+  },
+  {
+    "typeId": "BatteryBlock",
+    "subtypeId": "LargeBlockBatteryReskinOffset",
+    "displayName": "Battery Bank Offset",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 15
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "PowerCell",
+        "displayName": "Power Cell",
+        "count": 40
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 40
+      }
+    ]
+  },
+  {
+    "typeId": "BatteryBlock",
     "subtypeId": "LargeBlockPrototechBattery",
     "displayName": "Prototech Battery",
     "components": [
@@ -776,6 +830,33 @@
     "typeId": "BatteryBlock",
     "subtypeId": "SmallBlockBatteryBlockWarfare2",
     "displayName": "Warfare Battery",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 2
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 5
+      },
+      {
+        "subtypeId": "PowerCell",
+        "displayName": "Power Cell",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 25
+      }
+    ]
+  },
+  {
+    "typeId": "BatteryBlock",
+    "subtypeId": "SmallBlockBatteryReskin",
+    "displayName": "Battery Bank",
     "components": [
       {
         "subtypeId": "Computer",
@@ -1107,7 +1188,7 @@
   {
     "typeId": "ButtonPanel",
     "subtypeId": "LargeBlockAccessPanel3",
-    "displayName": "Access Panel 3",
+    "displayName": "Access Panel C",
     "components": [
       {
         "subtypeId": "Computer",
@@ -2303,6 +2384,43 @@
   },
   {
     "typeId": "Cockpit",
+    "subtypeId": "LargeBlockClosedSlopedCockpit",
+    "displayName": "Sloped Cockpit",
+    "components": [
+      {
+        "subtypeId": "BulletproofGlass",
+        "displayName": "Bulletproof Glass",
+        "count": 50
+      },
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 100
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "Display",
+        "displayName": "Display",
+        "count": 10
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
     "subtypeId": "LargeBlockCockpit",
     "displayName": "Control Station",
     "components": [
@@ -2639,6 +2757,43 @@
         "subtypeId": "SteelPlate",
         "displayName": "Steel Plate",
         "count": 15
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
+    "subtypeId": "LargeBlockOpenSlopedCockpit",
+    "displayName": "Open Sloped Cockpit",
+    "components": [
+      {
+        "subtypeId": "BulletproofGlass",
+        "displayName": "Bulletproof Glass",
+        "count": 50
+      },
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 100
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "Display",
+        "displayName": "Display",
+        "count": 10
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 30
       }
     ]
   },
@@ -2990,6 +3145,43 @@
   },
   {
     "typeId": "Cockpit",
+    "subtypeId": "SmallBlockClosedSlopedCockpit",
+    "displayName": "Sloped Cockpit",
+    "components": [
+      {
+        "subtypeId": "BulletproofGlass",
+        "displayName": "Bulletproof Glass",
+        "count": 30
+      },
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 30
+      },
+      {
+        "subtypeId": "Display",
+        "displayName": "Display",
+        "count": 6
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
     "subtypeId": "SmallBlockCockpit",
     "displayName": "Cockpit",
     "components": [
@@ -3106,6 +3298,43 @@
         "subtypeId": "SteelPlate",
         "displayName": "Steel Plate",
         "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
+    "subtypeId": "SmallBlockOpenSlopedCockpit",
+    "displayName": "Open Sloped Cockpit",
+    "components": [
+      {
+        "subtypeId": "BulletproofGlass",
+        "displayName": "Bulletproof Glass",
+        "count": 30
+      },
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 30
+      },
+      {
+        "subtypeId": "Display",
+        "displayName": "Display",
+        "count": 6
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 30
       }
     ]
   },
@@ -3303,6 +3532,43 @@
         "subtypeId": "SteelPlate",
         "displayName": "Steel Plate",
         "count": 45
+      }
+    ]
+  },
+  {
+    "typeId": "Collector",
+    "subtypeId": "CollectorFlat",
+    "displayName": "Flat Collector",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 5
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 15
+      },
+      {
+        "subtypeId": "Display",
+        "displayName": "Display",
+        "count": 2
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 5
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 5
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 15
       }
     ]
   },
@@ -3593,6 +3859,33 @@
   },
   {
     "typeId": "Conveyor",
+    "subtypeId": "LargeBlockStructural_PlatformConveyor",
+    "displayName": "Structural Platform Conveyor",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 60
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 10
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 500
+      }
+    ]
+  },
+  {
+    "typeId": "Conveyor",
     "subtypeId": "SmallBlockConveyor",
     "displayName": "Small Conveyor",
     "components": [
@@ -3643,7 +3936,7 @@
   {
     "typeId": "Conveyor",
     "subtypeId": "SmallShipConveyorHub",
-    "displayName": "Conveyor Junction",
+    "displayName": "Medium Conveyor Junction",
     "components": [
       {
         "subtypeId": "Construction",
@@ -3670,7 +3963,7 @@
   {
     "typeId": "ConveyorConnector",
     "subtypeId": "ConveyorFrameMedium",
-    "displayName": "Conveyor Frame",
+    "displayName": "Medium Conveyor Frame",
     "components": [
       {
         "subtypeId": "Construction",
@@ -3751,7 +4044,7 @@
   {
     "typeId": "ConveyorConnector",
     "subtypeId": "ConveyorTubeCurvedMedium",
-    "displayName": "Curved Conveyor Tube",
+    "displayName": "Medium Curved Conveyor Tube",
     "components": [
       {
         "subtypeId": "Construction",
@@ -4139,7 +4432,7 @@
   {
     "typeId": "ConveyorSorter",
     "subtypeId": "MediumBlockConveyorSorter",
-    "displayName": "Conveyor Sorter",
+    "displayName": "Medium Conveyor Sorter",
     "components": [
       {
         "subtypeId": "Computer",
@@ -5142,6 +5435,50 @@
   },
   {
     "typeId": "CubeBlock",
+    "subtypeId": "CatwalkTriangular",
+    "displayName": "Grated Catwalk Triangle",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 2
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "CatwalkTriangularRailing",
+    "displayName": "Grated Catwalk Triangle Railing",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 18
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 2
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 18
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
     "subtypeId": "CatwalkWall",
     "displayName": "Grated Catwalk Wall",
     "components": [
@@ -5159,6 +5496,227 @@
         "subtypeId": "SmallTube",
         "displayName": "Small Tube",
         "count": 26
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailing2x1Left",
+    "displayName": "Square Railing 2x1 Left",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailing2x1LeftTip",
+    "displayName": "Square Railing 2x1 Left Tip",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailing2x1Right",
+    "displayName": "Square Railing 2x1 Right",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailing2x1RightTip",
+    "displayName": "Square Railing 2x1 Right Tip",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailingCenter",
+    "displayName": "Square Railing Center",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 8
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailingCorner",
+    "displayName": "Square Railing Corner",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 16
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailingDiagonal",
+    "displayName": "Square Railing Diagonal",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 12
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailingDouble",
+    "displayName": "Square Railing Double",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 16
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailingGate",
+    "displayName": "Square Railing Entry",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 8
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailingHalfLeft",
+    "displayName": "Square Railing Half Left",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 8
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailingHalfRight",
+    "displayName": "Square Railing Half Right",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 8
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailingRound",
+    "displayName": "Square Railing Curved",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 14
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "ContinuousRailingStraight",
+    "displayName": "Square Railing Straight",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 8
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 6
       }
     ]
   },
@@ -5868,7 +6426,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "GratedHalfStairs",
-    "displayName": "Grated Half Stairs",
+    "displayName": "Grated Stairs Right",
     "components": [
       {
         "subtypeId": "Construction",
@@ -5890,7 +6448,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "GratedHalfStairsMirrored",
-    "displayName": "Grated Half Stairs Mirrored",
+    "displayName": "Grated Stairs Left",
     "components": [
       {
         "subtypeId": "Construction",
@@ -7178,6 +7736,160 @@
         "subtypeId": "Motor",
         "displayName": "Motor",
         "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockCableRun",
+    "displayName": "Cable Run 1",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockCableRunCorner",
+    "displayName": "Cable Run Corner",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 30
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 30
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockCableRunLong",
+    "displayName": "Cable Run 3",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 40
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockCableRunLongOffset",
+    "displayName": "Cable Run 3 Offset",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 40
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockCableRunOffset",
+    "displayName": "Cable Run 1 Offset",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockCableRunStyle2",
+    "displayName": "Cable Run 2",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockCableRunStyle2Offset",
+    "displayName": "Cable Run 2 Offset",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 5
       }
     ]
   },
@@ -8656,7 +9368,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeBlockModularBridgeCorner2x1BaseL",
-    "displayName": "Bridge Corner 2x1 Base L",
+    "displayName": "Bridge Corner 2x1 Base Left",
     "components": [
       {
         "subtypeId": "BulletproofGlass",
@@ -8678,7 +9390,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeBlockModularBridgeCorner2x1BaseLFloorless",
-    "displayName": "Bridge Corner 2x1 Base L Floorless",
+    "displayName": "Bridge Corner 2x1 Base Left Floorless",
     "components": [
       {
         "subtypeId": "BulletproofGlass",
@@ -8700,7 +9412,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeBlockModularBridgeCorner2x1BaseR",
-    "displayName": "Bridge Corner 2x1 Base R",
+    "displayName": "Bridge Corner 2x1 Base Right",
     "components": [
       {
         "subtypeId": "BulletproofGlass",
@@ -8722,7 +9434,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeBlockModularBridgeCorner2x1BaseRFloorless",
-    "displayName": "Bridge Corner 2x1 Base R Floorless",
+    "displayName": "Bridge Corner 2x1 Base Right Floorless",
     "components": [
       {
         "subtypeId": "BulletproofGlass",
@@ -8898,7 +9610,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeBlockModularBridgeSideL",
-    "displayName": "Bridge Side L",
+    "displayName": "Bridge Side Left",
     "components": [
       {
         "subtypeId": "BulletproofGlass",
@@ -8920,7 +9632,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeBlockModularBridgeSideR",
-    "displayName": "Bridge Side R",
+    "displayName": "Bridge Side Right",
     "components": [
       {
         "subtypeId": "BulletproofGlass",
@@ -9609,6 +10321,40 @@
         "subtypeId": "InteriorPlate",
         "displayName": "Interior Plate",
         "count": 25
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockServerRack1",
+    "displayName": "Server Rack A",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockServerRack3",
+    "displayName": "Server Rack C",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 30
       }
     ]
   },
@@ -10469,6 +11215,159 @@
   },
   {
     "typeId": "CubeBlock",
+    "subtypeId": "LargeStairsShort",
+    "displayName": "Short Stairs",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 40
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeStairsSolid",
+    "displayName": "Solid Stairs",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 40
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeStairsSolidHalf",
+    "displayName": "Solid Half Stairs",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeStairsSolidHalfRailing",
+    "displayName": "Solid Half Stairs Railing",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeStairsSolidRailing",
+    "displayName": "Solid Stairs Railing",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 30
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 50
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeStairsSolidSideL",
+    "displayName": "Solid Stairs Left",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeStairsSolidSideR",
+    "displayName": "Solid Stairs Right",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeStairsSolidSideRailingL",
+    "displayName": "Solid Stairs Railing Left",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeStairsSolidSideRailingR",
+    "displayName": "Solid Stairs Railing Right",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
     "subtypeId": "LargeSteelCatwalk",
     "displayName": "Steel Catwalk",
     "components": [
@@ -10552,6 +11451,138 @@
         "subtypeId": "SmallTube",
         "displayName": "Small Tube",
         "count": 17
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeSteepStairsCenter",
+    "displayName": "Steep Stairs Center",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 8
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeSteepStairsLeft",
+    "displayName": "Steep Stairs Left",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 8
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeSteepStairsRailingCenter",
+    "displayName": "Steep Stairs Railing Center",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 10
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeSteepStairsRailingLeft",
+    "displayName": "Steep Stairs Railing Left",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 10
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeSteepStairsRailingRight",
+    "displayName": "Steep Stairs Railing Right",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 10
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeSteepStairsRight",
+    "displayName": "Steep Stairs Right",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 8
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 6
       }
     ]
   },
@@ -11588,6 +12619,28 @@
         "subtypeId": "SmallTube",
         "displayName": "Small Tube",
         "count": 48
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "Passage2Frame",
+    "displayName": "Passage 2 Frame",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 35
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 25
       }
     ]
   },
@@ -13062,7 +14115,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallBlockConveyorCap",
-    "displayName": "Conveyor Cap",
+    "displayName": "Small Conveyor Cap",
     "components": [
       {
         "subtypeId": "Construction",
@@ -13079,7 +14132,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallBlockConveyorCapMedium",
-    "displayName": "Conveyor Cap Medium",
+    "displayName": "Medium Conveyor Cap",
     "components": [
       {
         "subtypeId": "Construction",
@@ -19876,7 +20929,7 @@
   {
     "typeId": "InteriorLight",
     "subtypeId": "LargeBlockHalfTrofferLightInv",
-    "displayName": "Half Troffer Light Inv.",
+    "displayName": "Half Troffer Light Offset",
     "components": [
       {
         "subtypeId": "Construction",
@@ -20103,6 +21156,30 @@
   },
   {
     "typeId": "InteriorLight",
+    "subtypeId": "LargeBlockLightRound",
+    "displayName": "Round Light",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "InteriorLight",
+    "subtypeId": "LargeBlockLightSquare",
+    "displayName": "Square Light",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "InteriorLight",
     "subtypeId": "LargeBlockTrofferLight",
     "displayName": "Troffer Light",
     "components": [
@@ -20249,6 +21326,30 @@
         "subtypeId": "Construction",
         "displayName": "Construction",
         "count": 4
+      }
+    ]
+  },
+  {
+    "typeId": "InteriorLight",
+    "subtypeId": "SmallBlockLightRound",
+    "displayName": "Round Light",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "InteriorLight",
+    "subtypeId": "SmallBlockLightSquare",
+    "displayName": "Square Light",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 2
       }
     ]
   },
@@ -24819,6 +25920,48 @@
   },
   {
     "typeId": "OxygenGenerator",
+    "subtypeId": "LargeBlockPrototechOxygenGenerator",
+    "displayName": "Prototech O2/H2 Generator",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 10
+      },
+      {
+        "subtypeId": "PrototechCircuitry",
+        "displayName": "Prototech Circuitry",
+        "count": 10
+      },
+      {
+        "subtypeId": "PrototechFrame",
+        "displayName": "Prototech Frame",
+        "count": 1
+      },
+      {
+        "subtypeId": "PrototechMachinery",
+        "displayName": "Prototech Machinery",
+        "count": 10
+      },
+      {
+        "subtypeId": "PrototechPanel",
+        "displayName": "Prototech Panel",
+        "count": 150
+      }
+    ]
+  },
+  {
+    "typeId": "OxygenGenerator",
     "subtypeId": "OxygenGeneratorSmall",
     "displayName": "O2/H2 Generator",
     "components": [
@@ -24984,6 +26127,38 @@
   },
   {
     "typeId": "OxygenTank",
+    "subtypeId": "LargeHydrogenTankBulk",
+    "displayName": "Bulky Hydrogen Tank",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 8
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 80
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 60
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 280
+      }
+    ]
+  },
+  {
+    "typeId": "OxygenTank",
     "subtypeId": "LargeHydrogenTankIndustrial",
     "displayName": "Industrial Hydrogen Tank",
     "components": [
@@ -25114,6 +26289,38 @@
     "typeId": "OxygenTank",
     "subtypeId": "SmallHydrogenTank",
     "displayName": "Hydrogen Tank",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 4
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 20
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 30
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 40
+      }
+    ]
+  },
+  {
+    "typeId": "OxygenTank",
+    "subtypeId": "SmallHydrogenTankBulk",
+    "displayName": "Bulky Hydrogen Tank",
     "components": [
       {
         "subtypeId": "Computer",
@@ -28827,7 +30034,7 @@
   {
     "typeId": "TerminalBlock",
     "subtypeId": "LargeBlockAccessPanel1",
-    "displayName": "Access Panel 1",
+    "displayName": "Access Panel A",
     "components": [
       {
         "subtypeId": "Computer",
@@ -28849,7 +30056,7 @@
   {
     "typeId": "TerminalBlock",
     "subtypeId": "LargeBlockAccessPanel2",
-    "displayName": "Access Panel 2",
+    "displayName": "Access Panel B",
     "components": [
       {
         "subtypeId": "Construction",
@@ -28871,7 +30078,7 @@
   {
     "typeId": "TerminalBlock",
     "subtypeId": "LargeBlockAccessPanel4",
-    "displayName": "Access Panel 4",
+    "displayName": "Access Panel D",
     "components": [
       {
         "subtypeId": "Construction",
@@ -28909,6 +30116,23 @@
         "subtypeId": "InteriorPlate",
         "displayName": "Interior Plate",
         "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "TerminalBlock",
+    "subtypeId": "LargeBlockServerRack2",
+    "displayName": "Server Rack B",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 30
       }
     ]
   },
@@ -28996,7 +30220,7 @@
   {
     "typeId": "TerminalBlock",
     "subtypeId": "SmallBlockAccessPanel1",
-    "displayName": "Access Panel 1",
+    "displayName": "Access Panel A",
     "components": [
       {
         "subtypeId": "Construction",
@@ -29018,7 +30242,7 @@
   {
     "typeId": "TerminalBlock",
     "subtypeId": "SmallBlockAccessPanel2",
-    "displayName": "Access Panel 2",
+    "displayName": "Access Panel B",
     "components": [
       {
         "subtypeId": "Construction",
@@ -29040,7 +30264,7 @@
   {
     "typeId": "TerminalBlock",
     "subtypeId": "SmallBlockAccessPanel3",
-    "displayName": "Access Panel 3",
+    "displayName": "Access Panel C",
     "components": [
       {
         "subtypeId": "Construction",
@@ -29062,7 +30286,7 @@
   {
     "typeId": "TerminalBlock",
     "subtypeId": "SmallBlockAccessPanel4",
-    "displayName": "Access Panel 4",
+    "displayName": "Access Panel D",
     "components": [
       {
         "subtypeId": "Construction",
