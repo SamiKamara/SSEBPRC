@@ -2293,6 +2293,53 @@
   },
   {
     "typeId": "Cockpit",
+    "subtypeId": "FighterCockpitType2",
+    "displayName": "Fighter Cockpit Type II",
+    "components": [
+      {
+        "subtypeId": "BulletproofGlass",
+        "displayName": "Bulletproof Glass",
+        "count": 40
+      },
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "Display",
+        "displayName": "Display",
+        "count": 4
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 10
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 5
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 1
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
     "subtypeId": "LargeBlockBathroom",
     "displayName": "Bathroom",
     "components": [
@@ -2352,6 +2399,38 @@
         "subtypeId": "SmallTube",
         "displayName": "Small Tube",
         "count": 8
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
+    "subtypeId": "LargeBlockCaptainChair",
+    "displayName": "Captain's Chair",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "Display",
+        "displayName": "Display",
+        "count": 1
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 1
       }
     ]
   },
@@ -2688,6 +2767,57 @@
         "subtypeId": "SmallTube",
         "displayName": "Small Tube",
         "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
+    "subtypeId": "LargeBlockJumpSeat",
+    "displayName": "Jump Seat",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
+    "subtypeId": "LargeBlockJumpSeatL",
+    "displayName": "Jump Seat Left",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
+    "subtypeId": "LargeBlockJumpSeatR",
+    "displayName": "Jump Seat Right",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 20
       }
     ]
   },
@@ -3297,6 +3427,23 @@
       {
         "subtypeId": "SteelPlate",
         "displayName": "Steel Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "Cockpit",
+    "subtypeId": "SmallBlockJumpSeat",
+    "displayName": "Jump Seat",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
         "count": 20
       }
     ]
@@ -4016,6 +4163,33 @@
   },
   {
     "typeId": "ConveyorConnector",
+    "subtypeId": "ConveyorTube3X",
+    "displayName": "Conveyor Tube 3x",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 60
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 42
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 18
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 36
+      }
+    ]
+  },
+  {
+    "typeId": "ConveyorConnector",
     "subtypeId": "ConveyorTubeCurved",
     "displayName": "Curved Conveyor Tube",
     "components": [
@@ -4102,6 +4276,38 @@
   },
   {
     "typeId": "ConveyorConnector",
+    "subtypeId": "ConveyorTubeDuct3X",
+    "displayName": "Reinforced Conveyor Tube 3x",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 60
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 42
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 18
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 36
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 75
+      }
+    ]
+  },
+  {
+    "typeId": "ConveyorConnector",
     "subtypeId": "ConveyorTubeDuctCurved",
     "displayName": "Reinforced Curved Conveyor Tube",
     "components": [
@@ -4156,6 +4362,33 @@
         "subtypeId": "SteelPlate",
         "displayName": "Steel Plate",
         "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "ConveyorConnector",
+    "subtypeId": "ConveyorTubeDuctSmall3X",
+    "displayName": "Small Reinforced Conveyor Tube 3x",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 3
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 3
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 3
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 6
       }
     ]
   },
@@ -4237,6 +4470,28 @@
   },
   {
     "typeId": "ConveyorConnector",
+    "subtypeId": "ConveyorTubeSmall3X",
+    "displayName": "Small Conveyor Tube 3x",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 3
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 3
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "typeId": "ConveyorConnector",
     "subtypeId": "ConveyorTubeSmallCurved",
     "displayName": "Small Curved Conveyor Tube",
     "components": [
@@ -4313,6 +4568,33 @@
   },
   {
     "typeId": "ConveyorConnector",
+    "subtypeId": "LargeBlockConveyorPipeEnd3X",
+    "displayName": "Conveyor Pipe 3x End",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 60
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 42
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 18
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 36
+      }
+    ]
+  },
+  {
+    "typeId": "ConveyorConnector",
     "subtypeId": "LargeBlockConveyorPipeFlange",
     "displayName": "Conveyor Pipe Flanged",
     "components": [
@@ -4340,6 +4622,33 @@
   },
   {
     "typeId": "ConveyorConnector",
+    "subtypeId": "LargeBlockConveyorPipeFlange3X",
+    "displayName": "Conveyor Pipe 3x Flanged",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 60
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 42
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 18
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 36
+      }
+    ]
+  },
+  {
+    "typeId": "ConveyorConnector",
     "subtypeId": "LargeBlockConveyorPipeSeamless",
     "displayName": "Conveyor Pipe",
     "components": [
@@ -4362,6 +4671,33 @@
         "subtypeId": "SmallTube",
         "displayName": "Small Tube",
         "count": 12
+      }
+    ]
+  },
+  {
+    "typeId": "ConveyorConnector",
+    "subtypeId": "LargeBlockConveyorPipeSeamless3X",
+    "displayName": "Conveyor Pipe 3x",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 60
+      },
+      {
+        "subtypeId": "InteriorPlate",
+        "displayName": "Interior Plate",
+        "count": 42
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 18
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 36
       }
     ]
   },
@@ -5072,12 +5408,97 @@
       {
         "subtypeId": "Construction",
         "displayName": "Construction",
-        "count": 4
+        "count": 3
       },
       {
         "subtypeId": "Girder",
         "displayName": "Girder",
         "count": 1
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "BarredWindowCrossed",
+    "displayName": "Barred Window Crossed",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 4
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "BarredWindowCrossedFace",
+    "displayName": "Barred Window Crossed Face",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 4
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "BarredWindowCrossedFaceInv",
+    "displayName": "Barred Window Crossed Face Inv.",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 4
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "BarredWindowCrossedSide",
+    "displayName": "Barred Window Crossed Side",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 4
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "BarredWindowCrossedSlope",
+    "displayName": "Barred Window Crossed Slope",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 6
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 3
       }
     ]
   },
@@ -5089,7 +5510,24 @@
       {
         "subtypeId": "Construction",
         "displayName": "Construction",
-        "count": 4
+        "count": 3
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "BarredWindowFaceInv",
+    "displayName": "Barred Window Face Inv.",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 3
       },
       {
         "subtypeId": "Girder",
@@ -5106,7 +5544,24 @@
       {
         "subtypeId": "Construction",
         "displayName": "Construction",
-        "count": 4
+        "count": 3
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "BarredWindowSideInv",
+    "displayName": "Barred Window Side Inv.",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 3
       },
       {
         "subtypeId": "Girder",
@@ -5128,7 +5583,7 @@
       {
         "subtypeId": "Girder",
         "displayName": "Girder",
-        "count": 1
+        "count": 2
       }
     ]
   },
@@ -7203,6 +7658,244 @@
   },
   {
     "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindow",
+    "displayName": "Barred Window",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 30
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindow1x2",
+    "displayName": "Barred Window 2x1",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 60
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 40
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowCrossed",
+    "displayName": "Barred Window Crossed",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowCrossed1x2",
+    "displayName": "Barred Window 2x1 Crossed",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 80
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 60
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowCrossedFace",
+    "displayName": "Barred Window Crossed Face",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 30
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowCrossedFaceInv",
+    "displayName": "Barred Window Crossed Face Inv.",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 30
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowCrossedSide",
+    "displayName": "Barred Window Crossed Side",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowCrossedSideInv",
+    "displayName": "Barred Window Crossed Side Inv.",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowCrossedSlope",
+    "displayName": "Barred Window Crossed Slope",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 50
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 40
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowFace",
+    "displayName": "Barred Window Face",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 23
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowFaceInv",
+    "displayName": "Barred Window Face Inv.",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 23
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowSide",
+    "displayName": "Barred Window Side",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 15
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowSideInv",
+    "displayName": "Barred Window Side Inv.",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 15
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBarredWindowSlope",
+    "displayName": "Barred Window Slope",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 25
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
     "subtypeId": "LargeBarrel",
     "displayName": "Barrel",
     "components": [
@@ -9210,6 +9903,125 @@
         "subtypeId": "InteriorPlate",
         "displayName": "Interior Plate",
         "count": 19
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockIntake2x1SlopeBase",
+    "displayName": "Intake Block 2x1 Base",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 15
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 16
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockIntake2x1SlopeTip",
+    "displayName": "Intake Block 2x1 Tip",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 5
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockIntakeCorner",
+    "displayName": "Intake Block Corner",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockIntakeCube",
+    "displayName": "Intake Block",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockIntakeHalf",
+    "displayName": "Intake Block Half",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockIntakeHalf2",
+    "displayName": "Intake Block Half 2",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "LargeBlockIntakeHalfCorner",
+    "displayName": "Intake Block Half Corner",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 4
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 4
       }
     ]
   },
@@ -11772,7 +12584,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeSymbolAnd",
-    "displayName": "And",
+    "displayName": "Symbol And",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -11784,7 +12596,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeSymbolApostrophe",
-    "displayName": "Apostrophe",
+    "displayName": "Symbol Apostrophe",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -11820,7 +12632,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeSymbolColon",
-    "displayName": "Colon",
+    "displayName": "Symbol Colon",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -11844,7 +12656,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeSymbolDot",
-    "displayName": "Dot",
+    "displayName": "Symbol Dot",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -11868,7 +12680,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeSymbolExclamationMark",
-    "displayName": "Exclamationmark",
+    "displayName": "Symbol Exclamation Mark",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -11916,7 +12728,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeSymbolHyphen",
-    "displayName": "Hyphen",
+    "displayName": "Symbol Hyphen",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -12036,7 +12848,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeSymbolQuestionMark",
-    "displayName": "Questionmark",
+    "displayName": "Symbol Question Mark",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -12096,7 +12908,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "LargeSymbolUnderscore",
-    "displayName": "Underscore",
+    "displayName": "Symbol Underscore",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -14690,6 +15502,125 @@
   },
   {
     "typeId": "CubeBlock",
+    "subtypeId": "SmallBlockIntake2x1SlopeBase",
+    "displayName": "Intake Block 2x1 Base",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "SmallBlockIntake2x1SlopeTip",
+    "displayName": "Intake Block 2x1 Tip",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 1
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "SmallBlockIntakeCorner",
+    "displayName": "Intake Block Corner",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 1
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "SmallBlockIntakeCube",
+    "displayName": "Intake Block",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "SmallBlockIntakeHalf",
+    "displayName": "Intake Block Half",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 1
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "SmallBlockIntakeHalf2",
+    "displayName": "Intake Block Half 2",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 1
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
+    "subtypeId": "SmallBlockIntakeHalfCorner",
+    "displayName": "Intake Block Half Corner",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 1
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "CubeBlock",
     "subtypeId": "SmallBlockKitchenCoffeeMachine",
     "displayName": "Coffee Machine",
     "components": [
@@ -15545,7 +16476,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallSymbolAnd",
-    "displayName": "And",
+    "displayName": "Symbol And",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -15557,7 +16488,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallSymbolApostrophe",
-    "displayName": "Apostrophe",
+    "displayName": "Symbol Apostrophe",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -15593,7 +16524,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallSymbolColon",
-    "displayName": "Colon",
+    "displayName": "Symbol Colon",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -15617,7 +16548,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallSymbolDot",
-    "displayName": "Dot",
+    "displayName": "Symbol Dot",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -15641,7 +16572,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallSymbolExclamationMark",
-    "displayName": "Exclamationmark",
+    "displayName": "Symbol Exclamation Mark",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -15689,7 +16620,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallSymbolHyphen",
-    "displayName": "Hyphen",
+    "displayName": "Symbol Hyphen",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -15809,7 +16740,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallSymbolQuestionMark",
-    "displayName": "Questionmark",
+    "displayName": "Symbol Question Mark",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -15869,7 +16800,7 @@
   {
     "typeId": "CubeBlock",
     "subtypeId": "SmallSymbolUnderscore",
-    "displayName": "Underscore",
+    "displayName": "Symbol Underscore",
     "components": [
       {
         "subtypeId": "SteelPlate",
@@ -18363,6 +19294,80 @@
   },
   {
     "typeId": "Door",
+    "subtypeId": "LargeBlockBrigDoorA",
+    "displayName": "Brig Door Right",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 2
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 30
+      },
+      {
+        "subtypeId": "Display",
+        "displayName": "Display",
+        "count": 1
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 20
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "Door",
+    "subtypeId": "LargeBlockBrigDoorB",
+    "displayName": "Brig Door Left",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 2
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 30
+      },
+      {
+        "subtypeId": "Display",
+        "displayName": "Display",
+        "count": 1
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 20
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "Door",
     "subtypeId": "LargeBlockCentredDoor",
     "displayName": "Centered Door",
     "components": [
@@ -20214,6 +21219,80 @@
   },
   {
     "typeId": "FunctionalBlock",
+    "subtypeId": "LargeBlockPrototechMicroEmitter",
+    "displayName": "Prototech Microwave Emitter",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 10
+      },
+      {
+        "subtypeId": "PrototechCapacitor",
+        "displayName": "Prototech Capacitor",
+        "count": 10
+      },
+      {
+        "subtypeId": "PrototechCircuitry",
+        "displayName": "Prototech Circuitry",
+        "count": 5
+      },
+      {
+        "subtypeId": "PrototechPanel",
+        "displayName": "Prototech Panel",
+        "count": 50
+      },
+      {
+        "subtypeId": "Superconductor",
+        "displayName": "Superconductor",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "FunctionalBlock",
+    "subtypeId": "LargeBlockSeparationCharge",
+    "displayName": "Separation Charge",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 1
+      },
+      {
+        "subtypeId": "Explosives",
+        "displayName": "Explosives",
+        "count": 4
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 10
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "FunctionalBlock",
     "subtypeId": "ServicesTerminal",
     "displayName": "Services Terminal",
     "components": [
@@ -20251,6 +21330,80 @@
         "subtypeId": "SteelPlate",
         "displayName": "Steel Plate",
         "count": 23
+      }
+    ]
+  },
+  {
+    "typeId": "FunctionalBlock",
+    "subtypeId": "SmallBlockPrototechMicroEmitter",
+    "displayName": "Prototech Microwave Emitter",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 4
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 4
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 2
+      },
+      {
+        "subtypeId": "PrototechCapacitor",
+        "displayName": "Prototech Capacitor",
+        "count": 4
+      },
+      {
+        "subtypeId": "PrototechCircuitry",
+        "displayName": "Prototech Circuitry",
+        "count": 2
+      },
+      {
+        "subtypeId": "PrototechPanel",
+        "displayName": "Prototech Panel",
+        "count": 20
+      },
+      {
+        "subtypeId": "Superconductor",
+        "displayName": "Superconductor",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "typeId": "FunctionalBlock",
+    "subtypeId": "SmallBlockSeparationCharge",
+    "displayName": "Separation Charge",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 1
+      },
+      {
+        "subtypeId": "Explosives",
+        "displayName": "Explosives",
+        "count": 1
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 1
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 1
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
       }
     ]
   },
@@ -21441,7 +22594,7 @@
   {
     "typeId": "InteriorTurret",
     "subtypeId": "LargeInteriorTurret",
-    "displayName": "Interior Turret",
+    "displayName": "Anti-Personnel Turret",
     "components": [
       {
         "subtypeId": "Computer",
@@ -22121,6 +23274,43 @@
   },
   {
     "typeId": "LargeGatlingTurret",
+    "subtypeId": "AutoCannonTurretType2",
+    "displayName": "Autocannon Turret Type II",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 10
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 6
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 4
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 4
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "LargeGatlingTurret",
     "subtypeId": "LargeGatlingTurretReskin",
     "displayName": "Gatling Turret Type II",
     "components": [
@@ -22306,8 +23496,82 @@
   },
   {
     "typeId": "LargeMissileTurret",
+    "subtypeId": "LargeBlockMediumCalibreTurretType2",
+    "displayName": "Assault Cannon Turret Type II",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 280
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 30
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 30
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 300
+      }
+    ]
+  },
+  {
+    "typeId": "LargeMissileTurret",
     "subtypeId": "LargeCalibreTurret",
     "displayName": "Artillery Turret",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 400
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 40
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 50
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 30
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 450
+      }
+    ]
+  },
+  {
+    "typeId": "LargeMissileTurret",
+    "subtypeId": "LargeCalibreTurretType2",
+    "displayName": "Artillery Turret Type II",
     "components": [
       {
         "subtypeId": "Computer",
@@ -22382,6 +23646,43 @@
     "typeId": "LargeMissileTurret",
     "subtypeId": "SmallBlockMediumCalibreTurret",
     "displayName": "Assault Cannon Turret",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 100
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 6
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 10
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 10
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 50
+      }
+    ]
+  },
+  {
+    "typeId": "LargeMissileTurret",
+    "subtypeId": "SmallBlockMediumCalibreTurretType2",
+    "displayName": "Assault Cannon Turret Type II",
     "components": [
       {
         "subtypeId": "Computer",
@@ -22538,6 +23839,53 @@
   },
   {
     "typeId": "LaserAntenna",
+    "subtypeId": "LargeBlockLaserAntennaType2",
+    "displayName": "Laser Antenna Type II",
+    "components": [
+      {
+        "subtypeId": "BulletproofGlass",
+        "displayName": "Bulletproof Glass",
+        "count": 4
+      },
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 50
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 40
+      },
+      {
+        "subtypeId": "Detector",
+        "displayName": "Detector",
+        "count": 30
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 16
+      },
+      {
+        "subtypeId": "RadioCommunication",
+        "displayName": "Radio Communication",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 50
+      },
+      {
+        "subtypeId": "Superconductor",
+        "displayName": "Superconductor",
+        "count": 100
+      }
+    ]
+  },
+  {
+    "typeId": "LaserAntenna",
     "subtypeId": "SmallBlockLaserAntenna",
     "displayName": "Laser Antenna",
     "components": [
@@ -22557,6 +23905,11 @@
         "count": 10
       },
       {
+        "subtypeId": "Detector",
+        "displayName": "Detector",
+        "count": 5
+      },
+      {
         "subtypeId": "Motor",
         "displayName": "Motor",
         "count": 5
@@ -22567,9 +23920,51 @@
         "count": 5
       },
       {
-        "subtypeId": "SmallTube",
-        "displayName": "Small Tube",
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
         "count": 10
+      },
+      {
+        "subtypeId": "Superconductor",
+        "displayName": "Superconductor",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "typeId": "LaserAntenna",
+    "subtypeId": "SmallBlockLaserAntennaType2",
+    "displayName": "Laser Antenna Type II",
+    "components": [
+      {
+        "subtypeId": "BulletproofGlass",
+        "displayName": "Bulletproof Glass",
+        "count": 2
+      },
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 30
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "Detector",
+        "displayName": "Detector",
+        "count": 5
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 5
+      },
+      {
+        "subtypeId": "RadioCommunication",
+        "displayName": "Radio Communication",
+        "count": 5
       },
       {
         "subtypeId": "SteelPlate",
@@ -25939,6 +27334,11 @@
         "count": 10
       },
       {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 10
+      },
+      {
         "subtypeId": "PrototechCircuitry",
         "displayName": "Prototech Circuitry",
         "count": 10
@@ -28981,6 +30381,43 @@
   },
   {
     "typeId": "SmallGatlingGun",
+    "subtypeId": "SmallBlockAutocannonType2",
+    "displayName": "Autocannon Type II",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 1
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 2
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 2
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 1
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "typeId": "SmallGatlingGun",
     "subtypeId": "SmallGatlingGunWarfare2",
     "displayName": "Warfare Gatling Gun",
     "components": [
@@ -29087,8 +30524,104 @@
   },
   {
     "typeId": "SmallMissileLauncher",
+    "subtypeId": "LargeBlockLargeCalibreGunType2",
+    "displayName": "Artillery Type II",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 5
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 20
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 20
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 250
+      }
+    ]
+  },
+  {
+    "typeId": "SmallMissileLauncher",
+    "subtypeId": "LargeBlockTorpedoLauncher",
+    "displayName": "Torpedo Launcher",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 20
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 100
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 40
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 50
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 10
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 300
+      }
+    ]
+  },
+  {
+    "typeId": "SmallMissileLauncher",
     "subtypeId": "LargeFlareLauncher",
-    "displayName": "Firework Launcher",
+    "displayName": "Flare Launcher",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 4
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 10
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "SmallMissileLauncher",
+    "subtypeId": "LargeInsetFlareLauncher",
+    "displayName": "Inset Flare Launcher",
     "components": [
       {
         "subtypeId": "Computer",
@@ -29151,8 +30684,72 @@
   },
   {
     "typeId": "SmallMissileLauncher",
+    "subtypeId": "SmallBlockTorpedoLauncher",
+    "displayName": "Torpedo Launcher",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 10
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 5
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 5
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "typeId": "SmallMissileLauncher",
     "subtypeId": "SmallFlareLauncher",
-    "displayName": "Firework Launcher",
+    "displayName": "Flare Launcher",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 1
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 1
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 3
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "SmallMissileLauncher",
+    "subtypeId": "SmallInsetFlareLauncher",
+    "displayName": "Inset Flare Launcher",
     "components": [
       {
         "subtypeId": "Computer",
@@ -29254,6 +30851,38 @@
     "typeId": "SmallMissileLauncherReload",
     "subtypeId": "SmallBlockMediumCalibreGun",
     "displayName": "Assault Cannon",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 1
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 10
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 10
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 5
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 25
+      }
+    ]
+  },
+  {
+    "typeId": "SmallMissileLauncherReload",
+    "subtypeId": "SmallBlockMediumCalibreGunType2",
+    "displayName": "Assault Cannon Type II",
     "components": [
       {
         "subtypeId": "Computer",
@@ -31363,6 +32992,38 @@
   },
   {
     "typeId": "Thrust",
+    "subtypeId": "LargeBlockLargeFlatAtmosphericThrustRound",
+    "displayName": "Large Flat Atmospheric Thruster Round",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 25
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 20
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 15
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 400
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 90
+      }
+    ]
+  },
+  {
+    "typeId": "Thrust",
     "subtypeId": "LargeBlockLargeHydrogenThrust",
     "displayName": "Large Hydrogen Thruster",
     "components": [
@@ -31695,6 +33356,38 @@
   },
   {
     "typeId": "Thrust",
+    "subtypeId": "LargeBlockSmallFlatAtmosphericThrustRound",
+    "displayName": "Flat Atmospheric Thruster Round",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 20
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 3
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 3
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 30
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "typeId": "Thrust",
     "subtypeId": "LargeBlockSmallHydrogenThrust",
     "displayName": "Hydrogen Thruster",
     "components": [
@@ -31955,6 +33648,38 @@
     "typeId": "Thrust",
     "subtypeId": "SmallBlockLargeFlatAtmosphericThrustDShape",
     "displayName": "Large Flat Atmospheric Thruster D Shape",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 14
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 2
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 3
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 30
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "typeId": "Thrust",
+    "subtypeId": "SmallBlockLargeFlatAtmosphericThrustRound",
+    "displayName": "Large Flat Atmospheric Thruster Round",
     "components": [
       {
         "subtypeId": "Construction",
@@ -32287,6 +34012,38 @@
     "typeId": "Thrust",
     "subtypeId": "SmallBlockSmallFlatAtmosphericThrustDShape",
     "displayName": "Flat Atmospheric Thruster D Shape",
+    "components": [
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 11
+      },
+      {
+        "subtypeId": "LargeTube",
+        "displayName": "Large Tube",
+        "count": 1
+      },
+      {
+        "subtypeId": "MetalGrid",
+        "displayName": "Metal Grid",
+        "count": 1
+      },
+      {
+        "subtypeId": "Motor",
+        "displayName": "Motor",
+        "count": 6
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "typeId": "Thrust",
+    "subtypeId": "SmallBlockSmallFlatAtmosphericThrustRound",
+    "displayName": "Flat Atmospheric Thruster Round",
     "components": [
       {
         "subtypeId": "Construction",
@@ -33003,6 +34760,43 @@
   },
   {
     "typeId": "Warhead",
+    "subtypeId": "LargeWarheadType2",
+    "displayName": "Warhead Type II",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 2
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 12
+      },
+      {
+        "subtypeId": "Explosives",
+        "displayName": "Explosives",
+        "count": 6
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 24
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 12
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "typeId": "Warhead",
     "subtypeId": "SmallExplosiveBarrel",
     "displayName": "Explosive Barrel",
     "components": [
@@ -33042,6 +34836,43 @@
     "typeId": "Warhead",
     "subtypeId": "SmallWarhead",
     "displayName": "Warhead",
+    "components": [
+      {
+        "subtypeId": "Computer",
+        "displayName": "Computer",
+        "count": 1
+      },
+      {
+        "subtypeId": "Construction",
+        "displayName": "Construction",
+        "count": 1
+      },
+      {
+        "subtypeId": "Explosives",
+        "displayName": "Explosives",
+        "count": 2
+      },
+      {
+        "subtypeId": "Girder",
+        "displayName": "Girder",
+        "count": 1
+      },
+      {
+        "subtypeId": "SmallTube",
+        "displayName": "Small Tube",
+        "count": 2
+      },
+      {
+        "subtypeId": "SteelPlate",
+        "displayName": "Steel Plate",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "typeId": "Warhead",
+    "subtypeId": "SmallWarheadType2",
+    "displayName": "Warhead Type II",
     "components": [
       {
         "subtypeId": "Computer",

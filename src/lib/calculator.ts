@@ -90,13 +90,15 @@ export function calculateBlueprintResources(
       addToMap(
         ingotCounts,
         normalizeSubtypeId(ingot.subtypeId),
-        (componentCount * ingot.amount) / calculationSettings.assemblerEfficiencyMultiplier,
+        componentCount * ingot.amount,
       );
     }
   }
 
   const components = sortRows(mapToRows(componentCounts, componentLabels));
-  const ingots = sortRows(mapToRows(ingotCounts, ingotLabels, roundWholeResourceAmount));
+  const ingots = sortRows(mapToRows(ingotCounts, ingotLabels, (amount) =>
+    roundWholeResourceAmount(amount / calculationSettings.assemblerEfficiencyMultiplier),
+  ));
 
   return {
     blueprint: {
